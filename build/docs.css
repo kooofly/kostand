@@ -1,0 +1,53 @@
+html,body { height: 100%; line-height: 1.42858; font-family: "Microsoft YaHei", sans-serif; }
+aside {
+    position: fixed; background: #fff; left: 0; top: 0; width: 240px; height: 100%; }
+.cont {
+    float: left; width: 100%;
+    padding-left: 240px; padding-bottom: 120px; background: #fafafa; }
+.sub{ font-size: 12px; color: #999; }
+.top-bar {
+    height: 120px;
+    padding: 40px;
+}
+
+.top-bar .left{ height: 54px; border-right: 1px solid #fff; padding: 0 40px; text-align: right; }
+.top-bar .logo{ font-size: 24px; }
+.top-bar .right{ height: 54px; padding: 0 40px; }
+.top-bar .sub{ color: #fff; }
+.top-bar .media-left{ padding-right: 0; }
+.top-bar .media-body .title{ font-size: 24px; font-family: "Microsoft JhengHei Light" }
+
+.outer { width: 1160px; margin: auto; }
+
+.quotation{ margin-top: 20px; background: #FFFBE0; padding: 20px; }
+.demo { margin-top: 120px; }
+.demo > .title{ font-size: 30px; font-family: "Microsoft YaHei", sans-serif; }
+.demo .title .sub{ font-size: 16px; text-transform: capitalize; }
+.demo > .body{ padding: 40px 0 0; }
+.demo > .body .description{ margin-bottom: 20px; }
+.demo .table{ width: 100%; }
+.demo .table tr.nobb td{ border-bottom: 0; }
+.color .color--block { width: 120px; height: 40px; padding: 10px; text-align: center; line-height: 20px; }
+td[rowspan]{ background: #fff!important; }
+
+.font-lg{ font-size: 16px; }
+
+.wrap-modal{ width: 100%; position: relative; padding: 40px; }
+.wrap-ml { margin-left: 40px; }
+.wrap-mr { margin-right: 40px; }
+.mask { position: absolute; left: 0; top: 0; width: 100%; height: 100%;  background: #333; opacity: .3; }
+.explain { padding-left: 80px; }
+
+#modal .row-flex:first-child { margin-top: 0; }
+#modal .row-flex{ margin-top: 80px; }
+.fs{ font-family: SimSun; }
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    } }
+.icon-loading:before { transition: all .3s ease;
+    animation: rotate 1s 0s linear infinite; display: block; }

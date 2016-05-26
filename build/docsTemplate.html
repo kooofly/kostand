@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doc</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1464246097_7792978.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="docs.css"/>
+</head>
+<body>
+<aside></aside>
+<div class="cont">
+    <div class="top-bar bg-info">
+        <div class="media">
+            <div class="media-left">
+                <div class="left">
+                    <div class="logo">
+                        KoooFly
+                    </div>
+                    <div class="version">
+                        v 0.1.0
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="right">
+                    <div class="title">一个自定义的UI设计规范</div>
+                    <div class="sub">自豪的使用KoooFly UI生成</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="quotation sub">规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
+        <div class="text-right">- Matias Duarte</div></div>
+        <div class="demo color">
+            <div class="title">
+                <span>色彩</span>
+                <span class="sub">Color</span>
+            </div>
+            <div class="body">
+                <div class="description">
+                    状态色和主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成
+                </div>
+                <table class="table">
+                    <tr>
+
+                        <th>定义</th>
+                        <th width="150">颜色</th>
+                        <th>使用场景</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            主色
+                        </td>
+                        <td>
+                            <div class="color--block bg-primary">#7799bb</div>
+                        </td>
+
+                        <td>
+                            主要用于统一网站风格，突出主要的按钮、链接
+                        </td>
+                    </tr>
+                    <tr class="noborder">
+                        <td rowspan="4" class="text-center">
+                            状态色
+                        </td>
+                        <td>
+                            <div class="color--block bg-success">#7799bb</div>
+                        </td>
+
+                        <td>
+                            主要用于操作成功的提示信息
+                        </td>
+                    </tr>
+                    <tr class="noborder">
+                        <td>
+                            <div class="color--block bg-info">#7799bb</div>
+                        </td>
+                        <td>
+                            主要用于无状态的提示信息,一些需要突出的重要小提示比较适合
+                        </td>
+                    </tr>
+                    <tr class="noborder">
+                        <td>
+                            <div class="color--block bg-danger">#7799bb</div>
+                        </td>
+
+                        <td>
+                            主要用于操作前的出错提示和危险的操作按钮
+                            <div class="sub">如：删除按钮，出错提示的icon，表单验证出错的icon</div>
+                        </td>
+                    </tr>
+                    <tr class="nobb">
+                        <td>
+                            <div class="color--block bg-warning">#7799bb</div>
+                        </td>
+                        <td>
+                            主要用于一些包含非预期结果操作的警告提示，防止用户不知情的改变数据，导致不期望的结果
+                            <div class="sub">如修改SKU信息会导致产品下架</div>
+                        </td>
+                    </tr>
+                    <tr class="bt nobb">
+                        <td class="text-center" rowspan="3">主文字色</td>
+                        <td><div class="color--block bg-gray-darker">#333</div></td>
+                        <td>用于一般的文字和普通的标题信息</td>
+                    </tr>
+                    <tr class="nobb">
+                        <td><div class="color--block bg-gray-dark">#666</div></td>
+                        <td>用于加粗的大号文字，防止文字太突兀</td>
+                    </tr>
+                    <tr class="nobb">
+                        <td><div class="color--block bg-gray">#999</div></td>
+                        <td>
+                            用于辅助、次要文字信息、不重要的提示
+                            <div class="sub">如说明文字、日期等，不使用偏浅的色值作文字色，如#ccc，无论是用白色还是深色作为背景都有对比度不高的问题，易导致视觉疲劳</div>
+                        </td>
+                    </tr>
+                    <tr class="bt nobb">
+                        <td class="text-center" rowspan="3">
+                            辅助色
+                        </td>
+                        <td>
+                            <div class="color--block bg-yellow-lighter">#FFFBE0</div>
+                        </td>
+                        <td>
+                            主要用于网站头部或者底部一些可关闭的提示、含有复杂内容的列表hover状态背景色、当前选择背景
+                            <div class="sub">如表格tr:hover 用于辅助看清 列表左侧和右侧内容的对应关系</div>
+                        </td>
+                    </tr>
+                    <tr class="nobb">
+                        <td><div class="color--block bg-gray-light">#EBEBEB</div></td>
+                        <td>
+                            用于分割线、边框、表格th背景
+                            <div class="sub"></div>
+                        </td>
+                    </tr>
+                    <tr class="nobb">
+                        <td><div class="color--block bg-gray-lighter">#f7f7f7</div></td>
+                        <td>
+                            用于列表隔行背景、只读文本框背景、次要按钮背景
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="demo font">
+            <div class="title">
+                <span>字体</span>
+                <span class="sub">Font</span>
+            </div>
+            <div class="body">
+                <div class="description">
+                    字体Size不要太多，配合状态色和文字色可以满足不同层次设计的表达需求
+                </div>
+                <table class="table">
+                    <tr>
+                        <th width="120">定义</th>
+                        <th width="150">样式</th>
+                        <th>使用场景</th>
+                    </tr>
+                    <tr>
+                        <td>16px, normal</td>
+                        <td><span class="font-lg">KF 示例文字</span></td>
+                        <td>用于大模块的普通标题，需要强调的可以配合状态色来使用</td>
+                    </tr>
+                    <tr>
+                        <td>14px, bold</td>
+                        <td><b>KF 示例文字</b></td>
+                        <td>用于正文着重突出的文字、二级标题</td>
+                    </tr>
+                    <tr>
+                        <td>14px, normal</td>
+                        <td><span>KF 示例文字</span></td>
+                        <td>用于普通文字</td>
+                    </tr>
+                    <tr>
+                        <td>12px, normal</td>
+                        <td><span class="sub">KF 示例文字</span></td>
+                        <td>用于次要的文字说明、列表的日期</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="demo icon">
+            <div class="title">
+                <span>图标</span>
+                <span class="sub">ICON</span>
+            </div>
+            <div class="body">
+
+            </div>
+        </div>
+        <div id="modal" class="demo">
+            <div class="title">
+                <span>模态框</span>
+                <span class="sub">Modal</span>
+            </div>
+            <div class="body">
+                <div class="row-flex">
+                    <div class="col-10">
+                        <div class="wrap-modal">
+                            <div class="mask"></div>
+                            <div class="modals panel">
+                                <div class="body">
+                                    提示要直接了当，语言简练，说重点
+                                </div>
+                                <footer class="footer text-right">
+                                    <button class="btn btn-primary">确定</button>
+                                    <button class="btn">取消</button>
+                                </footer>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-14">
+                        <div class="explain">
+                            没有title 就没有×，除非定制content的内容，这是一个简单的modals，复杂一点的见下面几个modals
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-flex">
+                    <div class="col-10">
+                        <div class="wrap-modal">
+                            <div class="mask"></div>
+                            <div class="modals panel">
+
+                                <header class="title bg-primary"><b>Modal Title</b><i class="icon icon-close close"></i></header>
+                                <div class="body">
+                                    提示语标点不要用感叹号，错误举例： 欢迎光临！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-14">
+                        <div class="explain">
+                            可以切换不同的模态框标题背景色来打造不同的弹窗，适用于不同状态的弹窗
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-flex">
+                    <div class="col-24">
+                        <div class="description">
+                            以下带icon的弹窗，icon的字体设置大小为40px，line-height为1，,则刚好可以和右边的两行字上下对齐，如果只有一行，则上下间距为10px，保证了美观
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="wrap-mr">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-success text-success state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <div>成功状态提示</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <footer class="footer text-right">
+                                        <button class="btn btn-primary">确定</button>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="wrap-ml">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-error text-danger state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                错误状态提示 <br>
+                                                <div class="sub">一些详细的错误信息</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <footer class="footer text-right">
+                                        <button class="btn btn-primary">确定</button>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row-flex">
+                    <div class="col-12">
+                        <div class="wrap-mr">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-error text-danger state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                错误状态提示 <br>
+                                                <div class="sub">一些详细的错误信息</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <footer class="footer text-right">
+                                        <button class="btn btn-primary">确定</button>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="wrap-ml">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-warning text-warning state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                警告状态提示 <br>
+                                                <div class="sub">一些详细的警告信息</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <footer class="footer text-right">
+                                        <button class="btn btn-primary">确定</button>
+                                        <button class="btn">取消</button>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-flex">
+                    <div class="col-10">
+                        <div class="wrap-modal">
+                            <div class="mask"></div>
+                            <div class="modals panel">
+                                <div class="body">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <i class="icon icon-loading text-info state"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            使出了吃奶的劲疯狂的加载中，拼了老命了 <span class="fs">...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-14">
+                        <div class="explain">
+                            一个加载提示
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="demo modal">
+            <div class="title">
+                <span>表单控件</span>
+                <span class="sub">Form Control</span>
+            </div>
+            <div class="body">
+
+            </div>
+        </div>
+
+        <div class="demo modal">
+            <div class="title">
+                <span>布局</span>
+                <span class="sub">Layout</span>
+            </div>
+            <div class="body">
+
+            </div>
+        </div>
+        <div class="demo modal">
+            <div class="title">
+                <span>动画</span>
+                <span class="sub">Animate</span>
+            </div>
+            <div class="body">
+
+            </div>
+        </div>
+        <div class="demo modal">
+            <div class="title">
+                <span>其他组件</span>
+                <span class="sub">Other</span>
+            </div>
+            <div class="body">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.demo{ margin: 30px; padding: 30px; background: #fafafa; box-shadow: 1px 1px 1px #ddd; }
+.demo .bg{ display: inline-block; padding: 10px; }
+.demo .list .item .icon{ background: #ccc; }
+.demo .row *,
+.demo .row-flex *{ background: #f1f1f1; border: 1px solid #ccc; }
+.demo .row-flex *{ background: #f1f1f1; border: 1px solid #ccc; }
+.demo .anitem{  width: 100px; height: 60px; float: left; margin-right: 10px; background: #ccc; text-align:center; line-height: 60px;  }
+.test{ height: 3rem; }

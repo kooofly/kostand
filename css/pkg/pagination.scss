@@ -1,0 +1,6 @@
+@import "../config";
+.pagination{ display: inline-block; }
+.pagination li{ display: inline; }
+.pagination li .item{ position: relative; float: left; padding: 6px 12px; line-height: 1.4; text-decoration: none; background-color: transparent; border: 1px solid $gray-light; margin-right: 5px; }
+.pagination li .item:hover,
+.pagination li .active { background: $primary; border-color: $primary; color: #fff; }

@@ -1,0 +1,15 @@
+@import "../config";
+.tooltip{ position: relative; border: 1px solid $gray-light; padding: $size-small; background: #fff; }
+.tooltip:before,
+.tooltip:after{ content: ""; position: absolute; border-left: 6px solid transparent; border-right: 6px solid transparent; }
+
+.tooltip:before{ border-bottom: solid; border-width: 7px; left: 16px; top: -7px; border-bottom-color: $gray-light; }
+.tooltip:after{ border-bottom: 6px solid; left: 17px; top: -6px; border-bottom-color: #fff; }
+
+.tooltip-ontop:before{ border-bottom: 0 none; border-top: 7px solid; left: 16px; top: auto; bottom: -7px; border-top-color: $gray-light; }
+.tooltip-ontop:after{ border-bottom: 0 none; border-top: 6px solid; left: 17px; top: auto; bottom: -6px; border-top-color: #fff; }
+
+.tooltip-danger{ border: 1px solid $danger; }
+.tooltip-danger:before{ border-bottom-color: $danger; }
+
+.tooltip-ontop.tooltip-danger:before { border-top-color: $danger; }

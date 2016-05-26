@@ -1,0 +1,25 @@
+.pagination {
+  display: inline-block;
+}
+
+.pagination li {
+  display: inline;
+}
+
+.pagination li .item {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.4;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  margin-right: 5px;
+}
+
+.pagination li .item:hover,
+.pagination li .active {
+  background: #7799bb;
+  border-color: #7799bb;
+  color: #fff;
+}

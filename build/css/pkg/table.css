@@ -1,0 +1,40 @@
+.table {
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.table th {
+  padding: 0.1rem 0.15rem;
+  color: #666666;
+  background: #ebebeb;
+  text-align: left;
+}
+
+.table tr:hover td {
+  background: #FFFBE0;
+}
+
+.table td {
+  padding: 0.1rem 0.15rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.table .bt td {
+  border-top: 1px solid #ebebeb;
+}
+
+.table-striped tr:nth-child(odd) td {
+  background: #f7f7f7;
+}
+
+.table-border th {
+  border: 1px solid #ebebeb;
+}
+
+.table-border td {
+  border: 1px solid #ebebeb;
+}
+
+.table-noborder td {
+  border: 0;
+}

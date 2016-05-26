@@ -1,0 +1,8 @@
+@import "../config";
+.tree{ list-style: none outside none; padding: 0; background: #fff; }
+.tree li { padding-left: 20px; }
+.tree li a{ display: block; padding: 10px; }
+.tree li a:hover{ background: $gray-lighter; }
+.tree-root{ margin: 0; }
+.tree-root > li{ padding-left: 0; }
+.tree-root > li > a{ padding-left: 10px; }

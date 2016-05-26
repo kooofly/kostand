@@ -1,0 +1,10 @@
+@import "../config";
+.progress{ background-color: $gray-lighter; height: 12px; }
+.progress .bar{ background: $primary; float: left; width: 0; height: 100%; font-size: 12px; line-height: 1; color: #fff; text-align: center; transition: width .6s ease; }
+
+.progress-danger .bar{ background: $danger; }
+.progress-warning .bar{ background: $warning; }
+.progress-info .bar{ background: $info; }
+.progress-success .bar{ background: $success; }
+
+.progress-small{ height:2px; }

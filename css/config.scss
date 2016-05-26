@@ -1,0 +1,90 @@
+//是否启用全局 px false == px, true == rem
+$gUnit: rem;
+$font-size-html: 100px;
+
+//px rem 转换控制
+@function vpx($px, $unit) {
+  @if $unit == rem {
+    @return $px / $font-size-html * 1rem
+  } @else if $unit == px {
+    @return $px
+  }
+}
+
+$font-size:  vpx(14px, $gUnit);
+$font-size-small:  vpx(12px, $gUnit);
+$font-size-big: vpx(16px, $gUnit);
+$font-size-biger: vpx(20px, $gUnit);
+
+$primary: #7799bb;
+$success: #5cb85c;
+$info: #5bc0de;
+$warning: #f0ad4e;
+$danger: #d9534f;
+$reverse: #fff;
+
+
+
+$gray: #999;
+$gray-darker: darken($gray, 40%);
+$gray-dark: darken($gray, 20%);
+$gray-light: lighten($gray, 32%);
+$gray-lighter: lighten($gray, 37%);
+
+$bg-btn: $gray-light;
+$yellow-lighter: #FFFBE0;
+
+$color-text: $gray-darker;
+$color-link: $primary;
+$color-visited: $primary;
+$color-hover: darken($color-link, 20%);
+$color-active: lighten($color-link, 20%);
+
+
+$size: vpx(15px, $gUnit) !default;
+$size-small: vpx(10px, $gUnit) !default;
+$size-smaller: vpx(6px, $gUnit) !default;
+$size-large: vpx(20px, $gUnit) !default;
+
+
+// z-index 1-10：普通页面元素 js select等，10-100：tooltips等，100-1000：dialog layer等
+$z-index-top: 1000;
+$z-index-lv-2: 100;
+$z-index-lv-1: 10;
+$z-index-bottom: 1;
+
+//bootstrap 变量
+$grid-gutter-width: 30px !default;
+
+
+
+$padding: 0.15rem;
+$margin: 0.15rem;
+$cc: #5cbb5c;
+
+
+
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+

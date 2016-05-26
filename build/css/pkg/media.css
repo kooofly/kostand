@@ -1,0 +1,62 @@
+.media {
+  margin-top: 0.15rem;
+  display: block;
+}
+
+.media:first-child {
+  margin-top: 0;
+}
+
+.media, .media-body {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.media-body {
+  width: 10000px;
+}
+
+.media-object {
+  display: block;
+}
+
+.media-object.img-thumbnail {
+  max-width: none;
+}
+
+.media-right {
+  padding-left: 10px;
+}
+
+.media-left {
+  padding-right: 10px;
+}
+
+.media-body, .media-left, .media-right {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.media-top,
+.media-top .media-left,
+.media-top .media-body,
+.media-top .media-right {
+  vertical-align: middle;
+}
+
+.media-bottom
+.media-bottom .media-left,
+.media-bottom .media-body,
+.media-bottom .media-right {
+  vertical-align: bottom;
+}
+
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.media-list {
+  padding-left: 0;
+  list-style: none;
+}

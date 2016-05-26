@@ -1,0 +1,44 @@
+@import "../config";
+.btn{display: inline-block;
+  padding: 4px $padding;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+  background: $bg-btn;
+  border: 1px solid transparent;
+  }
+.btn .icon{ margin-right: 6px; line-height: 1; }
+.btn:hover{ background: lighten($bg-btn, 3%) }
+.btn:active{ background: darken($bg-btn, 5%) }
+
+.btn-success{ background: $success; color: #fff; }
+.btn-success:hover{ background: lighten($success, 8%) }
+.btn-success:active{ background: darken($success, 8%) }
+
+.btn-primary{ background: $primary; color: #fff; }
+.btn-primary:hover{ background: lighten($primary, 8%) }
+.btn-primary:active{ background: darken($primary, 8%) }
+
+.btn-info{ background: $info; color: #fff; }
+.btn-info:hover{ background: lighten($info, 8%) }
+.btn-info:active{ background: darken($info, 8%) }
+
+.btn-warning{ background: $warning; color: #fff; }
+.btn-warning:hover{ background: lighten($warning, 8%) }
+.btn-warning:active{ background: darken($warning, 8%) }
+
+.btn-danger{ background: $danger; color: #fff; }
+.btn-danger:hover{ background: lighten($danger, 8%) }
+.btn-danger:active{ background: darken($danger, 8%) }
+
+.btn-block{ display: block; width: 100%; }
+.btn-sm{ padding: 2px 8px; }
+.btn-sm .icon{ font-size: 12px; }
+.btn-radius{ border-radius: 4px; }
+.btn-round{ border-radius: 60px; }

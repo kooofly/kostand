@@ -1,0 +1,52 @@
+@import "config";
+
+.t1{ background: $cc; }
+.t2, .bg-gray-darker{ background: $gray-darker; color: #fff; }
+.t3, .bg-gray-dark{ background: $gray-dark; color: #fff; }
+.t4, .bg-gray{ background: $gray; color: #fff; }
+.t5, .bg-gray-light{ background: $gray-light; }
+.t6, .bg-gray-lighter{ background: $gray-lighter; }
+
+html{ font-size: $font-size-html; }
+body{ font-size: 14px; font-family: Arial, sans-serif; color: $color-text; }
+
+*,:before,:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a{ color: $color-link; text-decoration: none; }
+a:visited{ color: $color-visited }
+a:hover{ color: $color-hover }
+a:active{ color: $color-active }
+
+.text-primary{ color: $primary; }
+.text-success{ color: $success; }
+.text-info{ color: $info; }
+.text-warning{ color: $warning; }
+.text-danger{ color: $danger; }
+
+.bg-primary{ background: $primary; color: $reverse; }
+.bg-success{ background: $success; color: $reverse; }
+.bg-info{ background: $info; color: $reverse; }
+.bg-warning{ background: $warning; color: $reverse; }
+.bg-danger{ background: $danger; color: $reverse; }
+.bg-yellow-lighter { background: $yellow-lighter; }
+
+/* library */
+.tof{display:block;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;-o-text-overflow:ellipsis;}
+.clearfix{*zoom:1;}.clearfix:after{display:block; content:"\200B"; height:0; clear:both; overflow:hidden; visibility:hidden;}
+
+.text-center{ text-align: center; }
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+
+.hide{ display:none; }
+
+.tran{
+  -webkit-transition:all 0.3s ease;
+  -moz-transition:all 0.3s ease;
+  -o-transition:all 0.3s ease;
+  transition:all 0.3s ease;
+}
