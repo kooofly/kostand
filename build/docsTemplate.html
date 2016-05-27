@@ -31,17 +31,20 @@
         </div>
     </div>
     <div class="outer">
-        <div class="quotation sub">规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
-        <div class="text-right">- Matias Duarte</div></div>
-        <div class="demo color">
-            <div class="title">
+        <div class="quotation sub">
+            规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
+            <div class="text-right">- Matias Duarte</div>
+        </div>
+
+
+
+        <section id="color" class="demo">
+            <h1 class="title">
                 <span>色彩</span>
                 <span class="sub">Color</span>
-            </div>
+            </h1>
             <div class="body">
-                <div class="description">
-                    状态色和主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成
-                </div>
+                <p>状态色和主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
                 <table class="table">
                     <tr>
 
@@ -143,16 +146,15 @@
                     </tr>
                 </table>
             </div>
-        </div>
-        <div class="demo font">
-            <div class="title">
+        </section>
+
+        <section id="font" class="demo">
+            <h1 class="title">
                 <span>字体</span>
                 <span class="sub">Font</span>
-            </div>
+            </h1>
             <div class="body">
-                <div class="description">
-                    字体Size不要太多，配合状态色和文字色可以满足不同层次设计的表达需求
-                </div>
+                <p>字体Size不要太多，配合状态色和文字色可以满足不同层次设计的表达需求</p>
                 <table class="table">
                     <tr>
                         <th width="120">定义</th>
@@ -181,73 +183,65 @@
                     </tr>
                 </table>
             </div>
-        </div>
-        <div class="demo icon">
-            <div class="title">
+        </section>
+        <section id="icon" class="demo">
+            <h1 class="title">
                 <span>图标</span>
                 <span class="sub">ICON</span>
-            </div>
+            </h1>
             <div class="body">
 
             </div>
-        </div>
-        <div id="modal" class="demo">
-            <div class="title">
+        </section>
+        <section id="modal" class="demo">
+            <h1 class="title">
                 <span>模态框</span>
                 <span class="sub">Modal</span>
-            </div>
+            </h1>
             <div class="body">
                 <div class="row-flex">
-                    <div class="col-10">
-                        <div class="wrap-modal">
-                            <div class="mask"></div>
-                            <div class="modals panel">
-                                <div class="body">
-                                    提示要直接了当，语言简练，说重点
-                                </div>
-                                <footer class="footer text-right">
-                                    <button class="btn btn-primary">确定</button>
-                                    <button class="btn">取消</button>
-                                </footer>
-                            </div>
-                        </div>
-
+                    <div class="col-8">
+                        <p>没有title 就没有×，除非定制content的内容，这是一个简单的modals，复杂一点的见下面几个modals</p>
+                        <p>提示要直接了当，语言简练，说重点</p>
+                        <p>提示语标点不要用感叹号，错误举例： 欢迎光临！</p>
+                        <p>可以切换不同的模态框标题背景色来打造不同的弹窗，适用于不同状态的弹窗</p>
                     </div>
-                    <div class="col-14">
-                        <div class="explain">
-                            没有title 就没有×，除非定制content的内容，这是一个简单的modals，复杂一点的见下面几个modals
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row-flex">
-                    <div class="col-10">
-                        <div class="wrap-modal">
-                            <div class="mask"></div>
-                            <div class="modals panel">
-
-                                <header class="title bg-primary"><b>Modal Title</b><i class="icon icon-close close"></i></header>
-                                <div class="body">
-                                    提示语标点不要用感叹号，错误举例： 欢迎光临！
+                    <div class="col-8">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        提示要直接了当，语言简练，说重点
+                                    </div>
+                                    <footer class="footer text-right">
+                                        <button class="btn btn-primary">确定</button>
+                                        <button class="btn">取消</button>
+                                    </footer>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-14">
-                        <div class="explain">
-                            可以切换不同的模态框标题背景色来打造不同的弹窗，适用于不同状态的弹窗
+                    <div class="col-8">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <header class="title bg-primary"><b>Modal Title</b><i class="icon icon-close close"></i></header>
+                                    <div class="body">
+                                        提示语标点不要用感叹号，错误举例： 欢迎光临！
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="row-flex">
-                    <div class="col-24">
-                        <div class="description">
-                            以下带icon的弹窗，icon的字体设置大小为40px，line-height为1，,则刚好可以和右边的两行字上下对齐，如果只有一行，则上下间距为10px，保证了美观
-                        </div>
+                    <div class="col-8">
+                        <p>带icon的弹窗，icon的字体设置大小为40px，line-height为1，,则刚好可以和右边的两行字上下对齐，如果只有一行，则上下间距为10px，保证了美观</p>
                     </div>
-                    <div class="col-12">
-                        <div class="wrap-mr">
+                    <div class="col-8">
+                        <div class="wrap">
                             <div class="wrap-modal">
                                 <div class="mask"></div>
                                 <div class="modals panel">
@@ -266,36 +260,9 @@
                                     </footer>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="wrap-ml">
-                            <div class="wrap-modal">
-                                <div class="mask"></div>
-                                <div class="modals panel">
-                                    <div class="body">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <i class="icon icon-error text-danger state"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                错误状态提示 <br>
-                                                <div class="sub">一些详细的错误信息</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <footer class="footer text-right">
-                                        <button class="btn btn-primary">确定</button>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="row-flex">
-                    <div class="col-12">
-                        <div class="wrap-mr">
+                        </div>
+                        <div class="wrap">
                             <div class="wrap-modal">
                                 <div class="mask"></div>
                                 <div class="modals panel">
@@ -317,8 +284,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="wrap-ml">
+                    <div class="col-8">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-error text-danger state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                错误状态提示 <br>
+                                                <div class="sub">一些详细的错误信息</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <footer class="footer text-right">
+                                        <button class="btn btn-primary">确定</button>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap">
                             <div class="wrap-modal">
                                 <div class="mask"></div>
                                 <div class="modals panel">
@@ -343,70 +331,96 @@
                     </div>
                 </div>
                 <div class="row-flex">
-                    <div class="col-10">
-                        <div class="wrap-modal">
-                            <div class="mask"></div>
-                            <div class="modals panel">
-                                <div class="body">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <i class="icon icon-loading text-info state"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            使出了吃奶的劲疯狂的加载中，拼了老命了 <span class="fs">...</span>
+                    <div class="col-8">
+                        <p>一个加载提示</p>
+                    </div>
+                    <div class="col-8">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+                                <div class="modals panel">
+                                    <div class="body">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-loading text-info state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                使出了吃奶的劲疯狂的加载中，拼了老命了 <span class="fs">...</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-14">
-                        <div class="explain">
-                            一个加载提示
-                        </div>
-                    </div>
+
                 </div>
 
             </div>
-        </div>
+        </section>
 
-        <div class="demo modal">
-            <div class="title">
+        <section class="demo">
+            <h1 class="title">
                 <span>表单控件</span>
                 <span class="sub">Form Control</span>
-            </div>
+            </h1>
             <div class="body">
 
             </div>
-        </div>
+        </section>
 
-        <div class="demo modal">
-            <div class="title">
+        <section class="demo modal">
+            <h1 class="title">
                 <span>布局</span>
                 <span class="sub">Layout</span>
-            </div>
+            </h1>
             <div class="body">
 
             </div>
-        </div>
-        <div class="demo modal">
-            <div class="title">
+        </section>
+        <section class="demo modal">
+            <h1 class="title">
                 <span>动画</span>
                 <span class="sub">Animate</span>
-            </div>
+            </h1>
             <div class="body">
 
             </div>
-        </div>
-        <div class="demo modal">
-            <div class="title">
+        </section>
+        <section class="demo modal">
+            <h1 class="title">
                 <span>其他组件</span>
                 <span class="sub">Other</span>
-            </div>
+            </h1>
             <div class="body">
 
             </div>
-        </div>
+        </section>
+
+        <!--template start-->
+        <section class="demo">
+            <h1 class="title">
+                <span>template</span>
+                <span class="sub">Color</span>
+            </h1>
+            <h3 class="sub-title">辅助色</h3>
+            <div>
+                <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
+            </div>
+            <div class="row-flex">
+                <div class="col-8">
+                    <p><b>状态色</b></p>
+                    <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
+                </div>
+                <div class="col-16">
+                    <div class="wrap">
+                        <div style="height: 200px; background: #ccc;"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--template end-->
     </div>
 
 </div>
