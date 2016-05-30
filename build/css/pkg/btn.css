@@ -17,6 +17,9 @@
 .btn .icon {
   margin-right: 6px;
   line-height: 1;
+  font-size: 14px;
+  vertical-align: middle;
+  -webkit-text-stroke-width: 0;
 }
 
 .btn:hover {

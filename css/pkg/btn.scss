@@ -13,7 +13,7 @@
   background: $bg-btn;
   border: 1px solid transparent;
   }
-.btn .icon{ margin-right: 6px; line-height: 1; }
+.btn .icon{ margin-right: 6px; line-height: 1; font-size: 14px; vertical-align: middle; -webkit-text-stroke-width: 0; }
 .btn:hover{ background: lighten($bg-btn, 3%) }
 .btn:active{ background: darken($bg-btn, 5%) }
 

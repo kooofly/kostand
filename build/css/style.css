@@ -925,6 +925,9 @@ a:active {
 .btn .icon {
   margin-right: 6px;
   line-height: 1;
+  font-size: 14px;
+  vertical-align: middle;
+  -webkit-text-stroke-width: 0;
 }
 
 .btn:hover {
@@ -1743,6 +1746,12 @@ a:active {
 }
 
 /*!/css/pkg/form-control.scss*/
+.form-group .media-left label {
+  width: 120px;
+  display: inline-block;
+  text-align: right;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -1756,6 +1765,10 @@ a:active {
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+select {
+  font-size: 14px;
 }
 
 .clear {

@@ -1,3 +1,9 @@
+.form-group .media-left label {
+  width: 120px;
+  display: inline-block;
+  text-align: right;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -11,6 +17,10 @@
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+select {
+  font-size: 14px;
 }
 
 .clear {
