@@ -1,11 +1,11 @@
 @import "config";
 
 .t1{ background: $cc; }
-.t2, .bg-gray-darker{ background: $gray-darker; color: #fff; }
-.t3, .bg-gray-dark{ background: $gray-dark; color: #fff; }
-.t4, .bg-gray{ background: $gray; color: #fff; }
-.t5, .bg-gray-light{ background: $gray-light; }
-.t6, .bg-gray-lighter{ background: $gray-lighter; }
+.t2, .bg-gray-darker{ background: $gray-darker!important; color: #fff!important; }
+.t3, .bg-gray-dark{ background: $gray-dark!important; color: #fff!important; }
+.t4, .bg-gray{ background: $gray!important; color: #fff!important; }
+.t5, .bg-gray-light{ background: $gray-light!important; }
+.t6, .bg-gray-lighter{ background: $gray-lighter!important; }
 
 html{ font-size: $font-size-html; }
 body{ font-size: 14px; font-family: Arial, sans-serif; color: $color-text; }
@@ -27,12 +27,12 @@ a:active{ color: $color-active }
 .text-warning{ color: $warning; }
 .text-danger{ color: $danger; }
 
-.bg-primary{ background: $primary; color: $reverse; }
-.bg-success{ background: $success; color: $reverse; }
-.bg-info{ background: $info; color: $reverse; }
-.bg-warning{ background: $warning; color: $reverse; }
-.bg-danger{ background: $danger; color: $reverse; }
-.bg-yellow-lighter { background: $yellow-lighter; }
+.bg-primary{ background: $primary!important; color: $reverse!important; }
+.bg-success{ background: $success!important; color: $reverse!important; }
+.bg-info{ background: $info!important; color: $reverse!important; }
+.bg-warning{ background: $warning!important; color: $reverse!important; }
+.bg-danger{ background: $danger!important; color: $reverse!important; }
+.bg-yellow-lighter { background: $yellow-lighter!important; }
 
 /* library */
 .tof{display:block;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;-o-text-overflow:ellipsis;}

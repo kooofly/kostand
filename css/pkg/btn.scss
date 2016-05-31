@@ -1,6 +1,6 @@
 @import "../config";
 .btn{display: inline-block;
-  padding: 4px $padding;
+  padding: 6px $padding;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -38,7 +38,8 @@
 .btn-danger:active{ background: darken($danger, 8%) }
 
 .btn-block{ display: block; width: 100%; }
-.btn-sm{ padding: 2px 8px; }
+.btn-sm{ padding: 1px 8px; }
+.btn-lg{ font-size: 16px; padding: 12px 0.15rem; }
 .btn-sm .icon{ font-size: 12px; }
 .btn-radius{ border-radius: 4px; }
-.btn-round{ border-radius: 60px; }
+.btn-round{ border-radius: 68px; }

@@ -1,11 +1,35 @@
+@charset "UTF-8";
 .form-group .media-left label {
-  width: 120px;
+  width: 119px;
   display: inline-block;
   text-align: right;
 }
 
-.form-control {
+.form-group .group-inline {
+  height: 34px;
+  padding: 4px 0;
+}
+
+.form-group .group-inline * {
+  vertical-align: middle;
+}
+
+.control-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.control-wrap .tips {
+  position: absolute;
+  right: 5px;
   display: block;
+  top: 5px;
+  color: #999;
+  padding: 0 6px;
+}
+
+.form-control {
+  vertical-align: middle;
   width: 100%;
   padding: 6px 12px;
   font-size: 14px;
@@ -19,8 +43,19 @@
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-select {
+.form-control-w-sm {
+  width: 230px;
+}
+
+/* 根据计算所得 1170 col-md-4 */
+.form-control-w-lg {
+  width: 426px;
+}
+
+/* 根据计算所得 1170 col-md-6 */
+select.form-control {
   font-size: 14px;
+  height: 34px;
 }
 
 .clear {
@@ -32,6 +67,13 @@ input:valid + .clear {
 }
 
 input:read-only,
-input[readonly] {
+input[readonly],
+select[disabled],
+input[disabled] {
   background: #f1f1f1;
+}
+
+body input[disabled],
+body select[disabled] {
+  cursor: not-allowed;
 }

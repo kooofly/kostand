@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1464246097_7792978.css"/>
     <link rel="stylesheet" href="./css/style.css"/>
     <link rel="stylesheet" href="docs.css"/>
+    <style type="text/css">
+
+    </style>
 </head>
 <body>
 <aside></aside>
@@ -30,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="outer">
+    <div class="container">
         <div class="quotation sub">
             规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
             <div class="text-right">- Matias Duarte</div>
@@ -355,7 +358,7 @@
             <h1 class="title">
                 <span>按钮</span>
                 <span class="sub">Button</span>
-                <select name="" id="">
+                <select class="form-control form-control-w-sm">
                     <option value="">选择按钮皮肤</option>
                     <option value="1">theme 1</option>
                     <option value="1">theme 2</option>
@@ -396,6 +399,14 @@
                         <td><button class="btn btn-sm">按钮</button></td>
                         <td>
                             用于多个操作的次要操作或用于行内有小form-control的情况，保持高度于form-control对齐
+                            <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>大按钮</td>
+                        <td><button class="btn btn-lg">大按钮</button></td>
+                        <td>
+                            <div>用于多个操作的次要操作或用于行内有小form-control的情况，保持高度于form-control对齐</div>
                             <div class="sub">搭配不同状态来配合不同的使用场景</div>
                         </td>
                     </tr>
@@ -458,11 +469,87 @@
                 <div class="media form-group">
                     <div class="media-left">
                         <label for="">
-                            自适应输入框
+                            固宽度输入框
                         </label>
                     </div>
                     <div class="media-body">
-                        <input class="form-control form-control-" type="text"/>
+                        <input class="form-control form-control-w-sm" type="text"/>
+                        <span class="sub">根据计算所得 1170 col-md-4 (1170 = (<b>119</b> + 10 + 230 + 30) * 3) 由于浏览器计算精度问题，所以120宽度的label，计算之后实际宽度为119，下同</span>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label>
+                            固宽度输入框2
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" type="text"/>
+                        <span class="sub">根据计算所得 1170 col-md-6</span>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label>
+                            只读输入框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" readonly value="只读输入框" type="text"/>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label>
+                            禁用输入框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" disabled value="禁用输入框" type="text"/>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            单选框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <div class="group-inline">
+                            <label><input name="kf" type="radio"/> <span class="lb">选项1</span></label>
+                            <label><input name="kf" type="radio"/> <span class="lb">选项2</span></label>
+                            <label><input name="kf" disabled type="radio"/> <span class="lb">禁用选项</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            复选框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <div class="group-inline">
+                            <label><input type="checkbox"/> <span class="lb">选项1</span></label>
+                            <label><input type="checkbox"/> <span class="lb">选项2</span></label>
+                            <label><input disabled type="checkbox"/> <span class="lb">禁用选项</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            混排
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <div class="control-wrap">
+                            <input class="form-control form-control-w-lg" placeholder="混排" type="text"/>
+                            <div class="tips bg-success">
+                                成功提示
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">保存</button>
                     </div>
                 </div>
             </div>
@@ -474,7 +561,18 @@
                 <span class="sub">Layout</span>
             </h1>
             <div class="body">
+                <div class="cell media" style="border-top:1px solid #ccc; border-bottom: 1px solid #ccc;">
+                    <div class="media-left">
+                        <div class="form-group">
+                            <input class="form-control form-control-w-sm" placeholder="手机混排" type="text"/>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <div>用于多个操作的次要操作或用于行内有小form-control的情况，保持高度于form-control对齐</div>
+                        <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                    </div>
 
+                </div>
             </div>
         </section>
         <section id="animate" class="demo">

@@ -429,26 +429,26 @@ th {
 }
 
 .t2, .bg-gray-darker {
-  background: #333333;
-  color: #fff;
+  background: #333333 !important;
+  color: #fff !important;
 }
 
 .t3, .bg-gray-dark {
-  background: #666666;
-  color: #fff;
+  background: #666666 !important;
+  color: #fff !important;
 }
 
 .t4, .bg-gray {
-  background: #999;
-  color: #fff;
+  background: #999 !important;
+  color: #fff !important;
 }
 
 .t5, .bg-gray-light {
-  background: #ebebeb;
+  background: #ebebeb !important;
 }
 
 .t6, .bg-gray-lighter {
-  background: #f7f7f7;
+  background: #f7f7f7 !important;
 }
 
 html {
@@ -505,32 +505,32 @@ a:active {
 }
 
 .bg-primary {
-  background: #7799bb;
-  color: #fff;
+  background: #7799bb !important;
+  color: #fff !important;
 }
 
 .bg-success {
-  background: #5cb85c;
-  color: #fff;
+  background: #5cb85c !important;
+  color: #fff !important;
 }
 
 .bg-info {
-  background: #5bc0de;
-  color: #fff;
+  background: #5bc0de !important;
+  color: #fff !important;
 }
 
 .bg-warning {
-  background: #f0ad4e;
-  color: #fff;
+  background: #f0ad4e !important;
+  color: #fff !important;
 }
 
 .bg-danger {
-  background: #d9534f;
-  color: #fff;
+  background: #d9534f !important;
+  color: #fff !important;
 }
 
 .bg-yellow-lighter {
-  background: #FFFBE0;
+  background: #FFFBE0 !important;
 }
 
 /* library */
@@ -908,7 +908,7 @@ a:active {
 /*!/css/pkg/btn.scss*/
 .btn {
   display: inline-block;
-  padding: 4px 0.15rem;
+  padding: 6px 0.15rem;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -1009,7 +1009,12 @@ a:active {
 }
 
 .btn-sm {
-  padding: 2px 8px;
+  padding: 1px 8px;
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 12px 0.15rem;
 }
 
 .btn-sm .icon {
@@ -1021,7 +1026,7 @@ a:active {
 }
 
 .btn-round {
-  border-radius: 60px;
+  border-radius: 68px;
 }
 
 /*!/css/pkg/crumb.scss*/
@@ -1746,14 +1751,38 @@ a:active {
 }
 
 /*!/css/pkg/form-control.scss*/
+
 .form-group .media-left label {
-  width: 120px;
+  width: 119px;
   display: inline-block;
   text-align: right;
 }
 
-.form-control {
+.form-group .group-inline {
+  height: 34px;
+  padding: 4px 0;
+}
+
+.form-group .group-inline * {
+  vertical-align: middle;
+}
+
+.control-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.control-wrap .tips {
+  position: absolute;
+  right: 5px;
   display: block;
+  top: 5px;
+  color: #999;
+  padding: 0 6px;
+}
+
+.form-control {
+  vertical-align: middle;
   width: 100%;
   padding: 6px 12px;
   font-size: 14px;
@@ -1767,8 +1796,19 @@ a:active {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-select {
+.form-control-w-sm {
+  width: 230px;
+}
+
+/* 根据计算所得 1170 col-md-4 */
+.form-control-w-lg {
+  width: 426px;
+}
+
+/* 根据计算所得 1170 col-md-6 */
+select.form-control {
   font-size: 14px;
+  height: 34px;
 }
 
 .clear {
@@ -1780,8 +1820,15 @@ input:valid + .clear {
 }
 
 input:read-only,
-input[readonly] {
+input[readonly],
+select[disabled],
+input[disabled] {
   background: #f1f1f1;
+}
+
+body input[disabled],
+body select[disabled] {
+  cursor: not-allowed;
 }
 
 /*!/css/pkg/grid.scss*/
