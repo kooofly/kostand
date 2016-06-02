@@ -44,7 +44,7 @@ td[rowspan] { background: #fff!important; }
 #modal .row-flex{ margin-top: 80px; }
 
 
-.phone{ width: 322px; border-left:1px solid #efefef; border-right:1px solid #efefef; background: url(./phone.png) top center no-repeat; padding-top: 64px; }
+.phone{ width: 322px; min-height: 570px; border:1px solid #efefef; background: url(./phone.png) top center no-repeat; padding-top: 64px; }
 .cell{ min-height: 44px; }
 
 @keyframes rotate {

@@ -5,6 +5,12 @@
   text-align: right;
 }
 
+.form-group .media-left .lbl-sm {
+  width: 70px;
+  display: inline-block;
+  text-align: left;
+}
+
 .form-group .group-inline {
   height: 34px;
   padding: 4px 0;
@@ -66,14 +72,21 @@ input:valid + .clear {
   display: inline;
 }
 
-input:read-only,
-input[readonly],
-select[disabled],
-input[disabled] {
+input.form-control:read-only,
+input.form-control[readonly],
+select.form-control[disabled],
+input.form-control[disabled],
+textarea.form-control {
   background: #f1f1f1;
 }
 
-body input[disabled],
-body select[disabled] {
+body input.form-control[disabled],
+body select.form-control[disabled],
+body textarea.form-control[disabled] {
   cursor: not-allowed;
+}
+
+.cell .media-left,
+.cell .media-body {
+  min-height: 44px;
 }

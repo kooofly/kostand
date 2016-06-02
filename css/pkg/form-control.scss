@@ -1,5 +1,6 @@
 @import "../config";
 .form-group .media-left label{ width: 119px; display: inline-block; text-align: right; }
+.form-group .media-left .lbl-sm{ width: 70px; display: inline-block; text-align: left; }
 .form-group .group-inline{ height: 34px; padding: 4px 0; }
 .form-group .group-inline * { vertical-align: middle; }
 .control-wrap{ position: relative; display: inline-block; }
@@ -35,3 +36,6 @@ textarea.form-control{ background: #f1f1f1; }
 body input.form-control[disabled],
 body select.form-control[disabled],
 body textarea.form-control[disabled]{ cursor: not-allowed; }
+
+.cell .media-left,
+.cell .media-body { min-height: 44px; }
