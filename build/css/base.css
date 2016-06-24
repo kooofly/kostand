@@ -78,6 +78,14 @@ a:active {
   color: #d9534f;
 }
 
+.text-gray {
+  color: #666666;
+}
+
+.text-helper {
+  color: #999;
+}
+
 .bg-primary {
   background: #7799bb !important;
   color: #fff !important;

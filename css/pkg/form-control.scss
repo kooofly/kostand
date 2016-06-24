@@ -32,7 +32,7 @@ input.form-control:read-only,
 input.form-control[readonly],
 select.form-control[disabled],
 input.form-control[disabled],
-textarea.form-control{ background: #f1f1f1; }
+textarea.form-control[disabled]{ background: #f1f1f1; }
 body input.form-control[disabled],
 body select.form-control[disabled],
 body textarea.form-control[disabled]{ cursor: not-allowed; }

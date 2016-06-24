@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{ font-size: 12px; line-height: 1.5; }
+        .modals{ width: 300px; border: 1px solid #ccc; }
+        .modals .body{ padding: 15px;  }
+        img{ width: 50px; height: 50px;}
+        .footer{ text-align: right; border-top: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<div class="modals">
+    <div class="body">
+        <img src="" alt="">
+        <div style="vertical-align: top; display: inline-block;">
+            <span style="font-size: 14px;">错误状态提示</span> <br>
+            <span style="color: #999;">一些详细的错误信息</span>
+        </div>
+    </div>
+    <div class="footer" style="padding: 15px;">
+        <button>确定</button>
+    </div>
+</div>
+<script>
+    function p1() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+                resolve('p1')
+            }, t)
+        })
+    }
+    function p2() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+                resolve('p2')
+            }, t)
+        })
+    }
+    function p3() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+                reject('reject p3')
+            }, t)
+        })
+    }
+    function p4() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+                resolve('p4')
+            }, t)
+        })
+    }
+
+    p1().then(function (result, resolve, reject) {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+                reject('中途 reject')
+            }, t)
+        })
+        return Promise.all([
+            p2(),
+            p3()
+        ]).then(function (res) {
+            console.log(result, res)
+            return { 'a': 'a' }
+        })
+    }).then(function (result) {
+        console.log(result)
+    }, function (e) {
+        console.log('error', e)
+    })
+
+    // 特殊情况
+    p1().then(function (result) {
+        console.log(result)
+        return Promise.all([
+            p2(),
+            p3()
+        ]).then(function (res) {
+            console.log(result, res)
+            return { 'a': 'a' }
+        }, function(e) {
+            // 在这里return了错误之后 会被视为下面这个then的resolve
+            // 所以 如果不需要这样 所有的中间步骤的reject都放到最后一步处理
+            return e
+        })
+    }).then(function (result) {
+        console.log('resolve 来自', result)
+    }, function (e) {
+        console.log('error', e)
+    })
+
+    var g = {
+        a:1,b:2,c:3,d:4
+    }
+
+    function isNot404() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+//                 reject('reject404')
+                resolve('resolve404')
+            }, t)
+        })
+    }
+
+    function moduleCheck() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+//                reject('rejectmoduleCheck')
+                resolve('resolvemoduleCheck')
+            }, t)
+        })
+    }
+
+    function uriResourceCheck() {
+        return new Promise(function (resolve, reject) {
+            var t = Math.random() * 1000
+            setTimeout(function () {
+//                reject('rejecturiResourceCheck')
+                resolve('resolveuriResourceCheck')
+            }, t)
+        })
+    }
+    isNot404().then(function (r) {
+        return moduleCheck().then(function (rr) {
+
+            return uriResourceCheck().then(function(rrr) {
+                return {
+                    404: r,
+                    moduleCheck: rr,
+                    uriResourceCheck: rrr
+                }
+            })
+        })
+    }).then(function (r) {
+        console.log('resolve', r)
+    }, function (e) {
+        console.log({
+            msg: e
+        })
+    })
+
+
+
+</script>
+</body>
+</html>

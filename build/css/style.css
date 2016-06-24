@@ -504,6 +504,14 @@ a:active {
   color: #d9534f;
 }
 
+.text-gray {
+  color: #666666;
+}
+
+.text-helper {
+  color: #999;
+}
+
 .bg-primary {
   background: #7799bb !important;
   color: #fff !important;
@@ -1027,6 +1035,14 @@ a:active {
 
 .btn-round {
   border-radius: 68px;
+}
+
+.btn-success:visited,
+.btn-primary:visited,
+.btn-info:visited,
+.btn-warning:visited,
+.btn-danger:visited {
+  color: #fff;
 }
 
 /*!/css/pkg/crumb.scss*/
@@ -1829,7 +1845,7 @@ input.form-control:read-only,
 input.form-control[readonly],
 select.form-control[disabled],
 input.form-control[disabled],
-textarea.form-control {
+textarea.form-control[disabled] {
   background: #f1f1f1;
 }
 
@@ -2711,7 +2727,7 @@ ul.list {
 .media-top .media-left,
 .media-top .media-body,
 .media-top .media-right {
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .media-bottom
@@ -2777,6 +2793,7 @@ body .modals > .footer {
 /*!/css/pkg/pagination.scss*/
 .pagination {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .pagination li {

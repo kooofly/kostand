@@ -41,7 +41,7 @@
 .media-top .media-left,
 .media-top .media-body,
 .media-top .media-right {
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .media-bottom

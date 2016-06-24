@@ -26,6 +26,8 @@ a:active{ color: $color-active }
 .text-info{ color: $info; }
 .text-warning{ color: $warning; }
 .text-danger{ color: $danger; }
+.text-gray{ color: $gray-dark; }
+.text-helper{ color: $gray }
 
 .bg-primary{ background: $primary!important; color: $reverse!important; }
 .bg-success{ background: $success!important; color: $reverse!important; }
