@@ -38,16 +38,16 @@
 }
 
 .media-top,
-.media-top .media-left,
-.media-top .media-body,
-.media-top .media-right {
+.media-top > .media-left,
+.media-top > .media-body,
+.media-top > .media-right {
   vertical-align: top;
 }
 
 .media-bottom
-.media-bottom .media-left,
-.media-bottom .media-body,
-.media-bottom .media-right {
+.media-bottom > .media-left,
+.media-bottom > .media-body,
+.media-bottom > .media-right {
   vertical-align: bottom;
 }
 

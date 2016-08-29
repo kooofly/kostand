@@ -474,7 +474,7 @@
                     </div>
                     <div class="media-body">
                         <input class="form-control form-control-w-sm" type="text"/>
-                        <span class="sub">根据计算所得 1170 col-md-4 (1170 = (<b>119</b> + 10 + 230 + 30) * 3) 由于浏览器计算精度问题，所以120宽度的label，计算之后实际宽度为119，下同</span>
+                        <span class="sub demo-tip">根据计算所得 1170 col-md-4 (1170 = (<b>119</b> + 10 + 230 + 30) * 3) 由于浏览器计算精度问题，所以120宽度的label，计算之后实际宽度为119，下同</span>
                     </div>
                 </div>
                 <div class="media form-group">
@@ -628,5 +628,22 @@
     </div>
 
 </div>
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
+<script>
+    $(function () {
+        var clip = new ZeroClipboard( $('._copy, #button .btn, #contrl .form-group, #modal .modals') );
+        clip.on('copy', function (e) {
+            var selector = $(e.target).data('copy') || e.target
+            var html = $(selector)[0].outerHTML
+            var $copy = $(html)
+            $copy.removeClass('_copy').removeClass('zeroclipboard-is-hover').removeAttr('data-copy')
+            $copy.find('.demo-tip').remove()
+            var text = $copy[0].outerHTML
+            console.log('复制成功', text)
+            e.clipboardData.setData("text/plain", text)
+        })
+    })
+</script>
 </body>
 </html>

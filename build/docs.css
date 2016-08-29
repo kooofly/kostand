@@ -56,3 +56,5 @@ td[rowspan] { background: #fff!important; }
     } }
 .icon-loading:before { transition: all .3s ease;
     animation: rotate 1s 0s linear infinite; display: block; }
+
+.zeroclipboard-is-hover{ outline: 1px dashed #00a0e9; }

@@ -44,6 +44,9 @@ a:active{ color: $color-active }
 .text-left{ text-align: left; }
 .text-right{ text-align: right; }
 
+.pull-left { float: left; }
+.pull-right { float: right; }
+
 .hide{ display:none; }
 
 .tran{
