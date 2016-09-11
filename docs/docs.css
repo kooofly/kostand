@@ -79,14 +79,4 @@ td[rowspan] { background: #fff!important; }
 .phone{ width: 322px; min-height: 570px; border:1px solid #efefef; background: url(./phone.png) top center no-repeat; padding-top: 64px; }
 .cell{ min-height: 44px; }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    } }
-.icon-loading:before { transition: all .3s ease;
-    animation: rotate 1s 0s linear infinite; display: block; }
-
 .zeroclipboard-is-hover{ outline: 1px dashed #00a0e9; }

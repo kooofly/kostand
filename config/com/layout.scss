@@ -5,13 +5,14 @@
 .header .nav-pills li:last-child{ border-right: 1px solid #f4f4f4; }
 .header .right{ width: 240px; text-align: right; font-size: 12px; }
 .header .right .link{ color: $gray-dark; padding: 13px 15px; display: inline-block; }
-.header .right .link i{ vertical-align: -1px; padding-right: 4px; }
+.header .right .link i{ vertical-align: -2px; padding-right: 4px; font-size: 16px; }
 .header .right .name{ padding: 13px 15px; border-left: 1px solid #f4f4f4; display: inline-block; }
 .header .right .name a{ margin-left: 6px; }
 .aside { background: #e8eaf0; padding-right: 0; margin-right: 10px;  }
 .aside .nav{ width: 210px; background: #e8eaf0; }
 .aside .nav a{ background: transparent; color: $gray-dark; padding-left: 30px; padding-right: 30px; border-radius: 0; }
 .aside .nav li{ border-bottom: 1px solid #d0d3d8; }
+.aside .nav-stacked>li+li{ margin-top: 0; }
 .aside .nav .active a,
 .aside .nav .active a:visited,
 .aside .nav .active a:hover{ background: #fff; color: $gray-dark; }
@@ -20,3 +21,4 @@
 .bd{ margin-top: 10px; }
 .bd > .media-body{ padding-left: 10px; padding-right: 10px; }
 .main{ background: #fff; min-height: 800px; }
+
