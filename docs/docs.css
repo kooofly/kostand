@@ -8,8 +8,10 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-html,body { height: 100%; font-family: "Microsoft YaHei", sans-serif; }
+html,body { height: 100%; font-family: "Microsoft YaHei", sans-serif;
+    background: #fafafa; }
 .container{ background: transparent; }
+.margin{ margin-left: 20px; margin-right: 20px; min-width: 1160px; }
 .logo{ font-family: 'Josefin Sans', sans-serif;font-family: 'Quicksand', sans-serif; }
 .sidebar {
     position: fixed; background: #fff; left: 0; top: 0; width: 240px; height: 100%; }
@@ -21,16 +23,17 @@ html,body { height: 100%; font-family: "Microsoft YaHei", sans-serif; }
     line-height: 1;
     color: #666;
 }
-
+.sidebar .nav-stacked > li + li{ margin-top: 0; }
 .sidebar li a{
     padding: 10px 20px;
     display: block;
     border-bottom: 1px solid #EBEBEB;
+    border-radius: 0;
 }
 .outer { width: 1160px; margin: auto; }
 .cont {
     float: left; width: 100%;
-    padding-left: 240px; padding-bottom: 120px; background: #fafafa; }
+    padding-left: 240px; padding-bottom: 120px; }
 
 .fs{ font-family: SimSun; }
 .sub { font-size: 12px; color: #999; }
@@ -38,7 +41,7 @@ html,body { height: 100%; font-family: "Microsoft YaHei", sans-serif; }
 .font-lg { font-size: 16px; }
 td[rowspan] { background: #fff!important; }
 
-.top-bar {padding: 20px;}
+.top-bar { padding: 20px; min-width: 1200px; }
 .top-bar .left,
 .top-bar .right {
     height: 65px;
@@ -75,15 +78,5 @@ td[rowspan] { background: #fff!important; }
 
 .phone{ width: 322px; min-height: 570px; border:1px solid #efefef; background: url(./phone.png) top center no-repeat; padding-top: 64px; }
 .cell{ min-height: 44px; }
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    } }
-.icon-loading:before { transition: all .3s ease;
-    animation: rotate 1s 0s linear infinite; display: block; }
 
 .zeroclipboard-is-hover{ outline: 1px dashed #00a0e9; }

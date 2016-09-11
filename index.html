@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Kooofly Web UI Standard Generator</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1464246097_7792978.css"/>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1473562007_073226.css"/>
+
     <link rel="stylesheet" href="./dist/kostand.css"/>
     <link rel="stylesheet" href="./docs/docs.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -52,77 +53,95 @@
             <div class="media-body">
                 <div class="right">
                     <div class="title">一个自定义的UI设计规范</div>
-                    <button id="abc"></button>
                     <!--<div class="sub">自豪的使用KoooFly UI生成</div>-->
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="quotation sub">
-            规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
-            <div class="text-right">- Matias Duarte</div>
-        </div>
+    <div class="margin">
+        <div class="container">
+            <div class="quotation sub">abv
+                规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
+                <div class="text-right">- Matias Duarte</div>
+            </div>
 
-        <div class="wrap" data-url="./kostand/color.html"></div>
-        <div class="wrap" data-url="./kostand/margin.html"></div>
-        <div class="wrap" data-url="./kostand/font.html"></div>
-        <div class="wrap demo" data-url="./kostand/layout.html"></div>
-        <div class="wrap" data-url="./kostand/button.html"></div>
-        <div class="wrap" data-url="./kostand/modal.html"></div>
-        <div class="wrap" data-url="./kostand/form.html"></div>
-        <div class="wrap" data-url="./kostand/table.html"></div>
+            <form id="abv" action="">
+                <textarea data-name="a" id="" cols="30" rows="10"></textarea>
+                <select data-name="s" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <input type="text" data-name="text" value="12"/>
+                <input type="radio" data-name="r" name="r" value="r3"/>
+                <input type="radio" data-name="r" name="r" value="r4"/>
+                <input type="checkbox" data-name="t" value="3"/>
+                <input type="checkbox" data-name="t" value="4"/>
+                <button data-role="submit">abc</button>
+            </form>
+            <div class="wrap" data-url="./kostand/color.html"></div>
+            <div class="wrap" data-url="./kostand/margin.html"></div>
+            <div class="wrap" data-url="./kostand/font.html"></div>
+            <div class="wrap demo" data-url="./kostand/layout.html"></div>
+            <div class="wrap" data-url="./kostand/button.html"></div>
+            <div class="wrap" data-url="./kostand/modal.html"></div>
+            <div class="wrap" data-url="./kostand/form.html"></div>
+            <div class="wrap" data-url="./kostand/table.html"></div>
 
 
-        <!--<section id="layout2" class="demo">
-            <h1 class="title">
-                <span>布局</span>
-                <span class="sub">Layout</span>
-            </h1>
-            <div class="body">
-                <div class="phone">
-                    <div class="cell media form-group">
-                        <div class="media-left">
-                            <label class="lbl-sm">手机标签</label>
-                        </div>
-                        <div class="media-body">
-                            <input class="form-control" placeholder="手机混排" type="text"/>
+            <!--<section id="layout2" class="demo">
+                <h1 class="title">
+                    <span>布局</span>
+                    <span class="sub">Layout</span>
+                </h1>
+                <div class="body">
+                    <div class="phone">
+                        <div class="cell media form-group">
+                            <div class="media-left">
+                                <label class="lbl-sm">手机标签</label>
+                            </div>
+                            <div class="media-body">
+                                <input class="form-control" placeholder="手机混排" type="text"/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>-->
+            </section>-->
 
-        <!--template start-->
-        <section id="template" class="demo">
-            <h1 class="title">
-                <span>template</span>
-                <span class="sub">Color</span>
-            </h1>
-            <h3 class="sub-title">辅助色</h3>
-            <div>
-                <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
-            </div>
-            <div class="row-flex">
-                <div class="col-8">
-                    <p><b>状态色</b></p>
+            <!--template start--><!--
+            <section id="template" class="demo">
+                <h1 class="title">
+                    <span>template</span>
+                    <span class="sub">Color</span>
+                </h1>
+                <h3 class="sub-title">辅助色</h3>
+                <div>
                     <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
                 </div>
-                <div class="col-16">
-                    <div class="wrap">
-                        <div style="height: 200px; background: #ccc;"></div>
+                <div class="row-flex">
+                    <div class="col-8">
+                        <p><b>状态色</b></p>
+                        <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
                     </div>
+                    <div class="col-16">
+                        <div class="wrap">
+                            <div style="height: 200px; background: #ccc;"></div>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!--template end-->
+            </section>
+            --><!--template end-->
+        </div>
     </div>
 
 </div>
 <script src="./assets/jquery.js"></script>
+<script src="./assets/form.js"></script>
 <script src="./dist/kostand.js"></script>
 <!--<script src="//cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>-->
 <script src="./docs/docs.js"></script>
+<script>
+    window.fff = new Form('#abv')
+</script>
 </body>
 </html>
