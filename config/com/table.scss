@@ -1,0 +1,11 @@
+.table-default > thead > tr > th{ background: #f1f2f6; font-weight: 400; border-bottom: 0; }
+.table-default > thead > tr > th,
+.table-default > thead > tr > td,
+.table-default > tbody > tr > th,
+.table-default > tbody > tr > td,
+.table-default > tfoot > tr > th,
+.table-default > tfoot > tr > td{ border-color: #e8eaf0; padding: 10px; }
+.table-hover > tbody > tr:hover{ background: #f9f9f9; }
+.table .checkbox-inlnie{ line-height: 1; }
+.table label{ margin-bottom: 0; }
+.table p { margin-bottom: 4px; }

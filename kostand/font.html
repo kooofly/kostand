@@ -1,0 +1,44 @@
+<style type="text/css">
+    #font .font:after{ content: attr(data-font);
+        display: block; }
+</style>
+<section id="font" class="demo">
+    <h1 class="title">
+        <span>字体</span>
+        <span class="sub">Font</span>
+    </h1>
+    <div class="body">
+        <p>字体Size不要太多，配合状态色和文字色可以满足不同层次设计的表达需求</p>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th width="150">样式</th>
+                <th>使用场景</th>
+            </tr>
+            <tr>
+                <td><span class="font-lg font">KF 示例文字</span></td>
+                <td>用于大模块的普通标题，需要强调的可以配合状态色来使用</td>
+            </tr>
+            <tr>
+                <td><b class="font">KF 示例文字</b></td>
+                <td>用于正文着重突出的文字、二级标题</td>
+            </tr>
+            <tr>
+                <td><span class="font">KF 示例文字</span></td>
+                <td>用于普通文字</td>
+            </tr>
+            <tr>
+                <td><span class="sub font">KF 示例文字</span></td>
+                <td>用于次要的文字说明、列表的日期</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<script>
+    $(function () {
+        $('.font').each(function () {
+            var fontSize = $(this).css('fontSize')
+            var fontStyle = $(this).css('fontWeight')
+            $(this).attr('data-font', fontSize + '，' + fontStyle)
+        })
+    })
+</script>
