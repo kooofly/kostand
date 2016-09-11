@@ -18,9 +18,3 @@ $(function () {
         $(this).load($(this).data('url'))
     })
 })
-
-$(function () {
-
-
-
-})

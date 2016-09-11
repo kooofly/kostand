@@ -1,6 +1,3 @@
 .idea
 node_modules/
 npm-debug.log
-config/
-webpack.config.js
-index.js
