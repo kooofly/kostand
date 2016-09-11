@@ -1,7 +1,7 @@
 $(function () {
 
     // 复制代码
-    var clip = new ZeroClipboard( $('._copy, #button .btn, #contrl .form-group, #modal .modals') );
+    /*var clip = new ZeroClipboard( $('._copy, #button .btn, #contrl .form-group, #modal .modals') );
     clip.on('copy', function (e) {
         var selector = $(e.target).data('copy') || e.target
         var html = $(selector)[0].outerHTML
@@ -11,10 +11,16 @@ $(function () {
         var text = $copy[0].outerHTML
         console.log('复制成功', text)
         e.clipboardData.setData("text/plain", text)
-    })
+    })*/
 
     // XX
     $('.wrap').each(function () {
         $(this).load($(this).data('url'))
     })
+})
+
+$(function () {
+
+
+
 })

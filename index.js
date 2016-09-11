@@ -11,5 +11,4 @@ require('./node_modules/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js
 require('./node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js')
 require('./node_modules/bootstrap-sass/assets/javascripts/bootstrap/affix.js')
 
-require('./config/_bootstrap.scss')
 require('./config/theme.scss')

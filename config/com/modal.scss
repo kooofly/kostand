@@ -1,0 +1,12 @@
+.modal-content { border-radius: 2px; box-shadow: none; }
+.modal-content .modal-header{ font-size: 14px; }
+.modal-header{ padding: 10px; }
+.modal-header .close{ font-size: 26px; }
+.modal-header .close:hover{ color: $brand-danger; opacity: .9; }
+.modal-title{ line-height: 24px; }
+.modal-dialog-no-title .modal-header{ border-bottom: 0; }
+.modal-dialog-no-title .close{ position: relative; z-index: 3; }
+.modal-dialog-no-title .modal-body{ padding-right: 40px; margin-top: -45px; }
+.modal-content .state{ font-size: 40px; line-height: 1; }
+.modal-footer{ text-align: center; }
+.modal-footer.no-border{ padding-top: 0; }

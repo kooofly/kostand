@@ -1,7 +1,6 @@
 var webpack = require('webpack')
 var path = require('path')
-var config = require('.//config/config')
-
+var config = require('./package.json')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 // 定义了一些文件夹的路径
 var ROOT_PATH = path.resolve(__dirname);
@@ -11,7 +10,7 @@ module.exports = {
         index: path.resolve(ROOT_PATH, 'index.js')
     },
     output: {
-        path: './dist',
+        path: __dirname + '/dist',
         filename: config.project + '.js'
     },
     // 'source-map' or 'inline-source-map'
@@ -37,6 +36,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin(config.project + '.css')
     ]
+}
+if (process.env.NODE_ENV !== 'production') {
+    module.exports.output.publicPath = '/dist/'
 }

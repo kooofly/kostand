@@ -1,0 +1,100 @@
+<style type="text/css">
+    #font .font:after{ content: attr(data-font);
+        display: block; }
+</style>
+<section id="table" class="demo">
+    <h1 class="title">
+        <span>表格</span>
+        <span class="sub">Table</span>
+    </h1>
+    <div class="body">
+        <table class="table table-default table-hover">
+            <thead>
+            <tr>
+                <th width="33">
+                    <div class="checkbox-inlnie">
+                        <label>
+                            <input type="checkbox">
+                        </label>
+                    </div>
+                </th>
+                <th>
+                    <div class="text-left">商品</div>
+                </th>
+                <th class="text-center" width="80">数量</th>
+                <th class="text-center" width="140">售价（元）</th>
+                <th class="text-center" width="220">身份证</th>
+                <th class="text-center" width="220">订单状态</th>
+                <th class="text-center" width="140">贫困等级</th>
+                <th class="text-center" width="160">操作</th>
+            </tr>
+            </thead>
+
+            <tr>
+                <td>
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                </td>
+                <td>
+                    <a href="">用于大模块的普通标题需要强调的可以配合状态色来使用 256g</a>
+                </td>
+                <td class="text-center vm">2</td>
+                <td class="text-center vm">
+                    <i class="glyphicon glyphicon-usd"></i>234
+                    <div class="sub">（含邮费：0.00）</div>
+                </td>
+                <td class="text-center vm">3307845587899856247</td>
+                <td class="text-center vm">
+
+                    <p>已完成</p>
+                    <div><a href="#">详情</a></div>
+                </td>
+                <td class="text-center vm"><span class="label label-danger">红卡户</span></td>
+                <td class="text-center vm">
+                    <a href="#">查看</a>
+                    <button class="btn btn-link text-danger" href="#">删除</button>
+                    <a href="#">编辑</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                </td>
+                <td>
+                    <a href="">用于大模块的普通标题需要强调的可以配合状态色来使用 256g</a>
+                </td>
+                <td class="text-center vm">2</td>
+                <td class="text-center vm">
+                    <i class="glyphicon glyphicon-usd"></i>234
+                    <div class="sub">（含邮费：0.00）</div>
+                </td>
+                <td class="text-center vm">3307845587899856247</td>
+                <td class="text-center vm">
+
+                    <p>失败</p>
+                    <div><a href="#">详情</a></div>
+                </td>
+                <td class="text-center vm"><span class="label label-danger">红卡户</span></td>
+                <td class="text-center vm">
+                    <a href="#">查看</a>
+                    <button class="btn btn-link text-danger" href="#">删除</button>
+                    <a href="#">编辑</a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</section>
+<script>
+    $(function () {
+        $('.font').each(function () {
+            var fontSize = $(this).css('fontSize')
+            var fontStyle = $(this).css('fontWeight')
+            $(this).attr('data-font', fontSize + '，' + fontStyle)
+        })
+    })
+</script>

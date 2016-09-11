@@ -7,11 +7,13 @@
     src: local('Quicksand Regular'), local('Quicksand-Regular'), url(./fonts/Quicksand%20Regular.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
-html,body { height: 100%; line-height: 1.42858; font-family: "Microsoft YaHei", sans-serif; line-height: 1.71428571; }
+
+html,body { height: 100%; font-family: "Microsoft YaHei", sans-serif; }
+.container{ background: transparent; }
 .logo{ font-family: 'Josefin Sans', sans-serif;font-family: 'Quicksand', sans-serif; }
-aside {
+.sidebar {
     position: fixed; background: #fff; left: 0; top: 0; width: 240px; height: 100%; }
-aside .logo {
+.sidebar .logo {
     font-size: 30px;
     border-bottom: 1px solid #EBEBEB;
 
@@ -20,7 +22,7 @@ aside .logo {
     color: #666;
 }
 
-aside li a{
+.sidebar li a{
     padding: 10px 20px;
     display: block;
     border-bottom: 1px solid #EBEBEB;
@@ -51,11 +53,11 @@ td[rowspan] { background: #fff!important; }
 .quotation { margin-top: 20px; margin-left: -15px; margin-right: -15px; background: #FFFBE0; padding: 20px; }
 
 .demo { margin-top: 40px; margin-left: -15px; margin-right: -15px; }
-.demo p { margin: 0 0 20px; }
+.demo .body > p { margin: 0 0 20px; }
 .demo > .title { padding-top: 48px; margin: 0 0 30px; font-weight: normal; font-size: 30px; font-family: "Microsoft YaHei", sans-serif; }
 .demo > .sub-title { font-size: 16px; margin: 0 0 30px; font-family: SimSun; }
 .demo .title .sub { text-transform: capitalize; }
-.demo .wrap { margin-left: 40px; }
+.demo .wrap { }
 .demo .wrap + .wrap { margin-top: 80px; }
 .demo .table { width: 100%; }
 .demo .table tr.nobb td { border-bottom: 0; }
@@ -65,11 +67,11 @@ td[rowspan] { background: #fff!important; }
 #font .table{ background: #fff; }
 #color .color--block { height: 40px; padding: 10px; text-align: center; line-height: 20px; }
 
-#modal .wrap-modal { width: 100%; position: relative; padding: 40px; }
+#modal .wrap-modal { width: 100%; position: relative; padding: 40px; min-height: 200px; }
 #modal .mask { height: 200px; }
 #modal .row-flex:first-child { margin-top: 0; }
 #modal .row-flex{ margin-top: 80px; }
-#modal .modal-dialog{ margin: 0; }
+#modal .modal-dialog{ margin: 0 auto; }
 
 .phone{ width: 322px; min-height: 570px; border:1px solid #efefef; background: url(./phone.png) top center no-repeat; padding-top: 64px; }
 .cell{ min-height: 44px; }

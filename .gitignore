@@ -1,6 +1,3 @@
 .idea
 node_modules/
-server-mock/
-server-mongo/
-server/
 npm-debug.log

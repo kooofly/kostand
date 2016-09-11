@@ -1,0 +1,47 @@
+i{ font-style: normal }
+//
+// bg
+// --------------------------------------------------
+.bg-tips{ background: $color-tips; }
+.bg-main{ background: $gray-dark; color: #fff; }
+.bg-gray{ background: $gray; color: #fff; }
+.bg-gray-light{ background: $gray-light; color: #fff; }
+
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger{ color: #fff; }
+
+//
+// text color
+// --------------------------------------------------
+.text-gray, b{ color: $gray !important; }
+.text-gray-light{ color: $gray-light !important; }
+
+//
+// font-size
+// --------------------------------------------------
+.font-lg, h1.title{ font-size: $font-size-large; }
+.font-sm, .sub { font-size: $font-size-small; color: $gray-light; }
+.sub { margin-top: 4px; }
+//
+// no-border
+// --------------------------------------------------
+.no-border{ border: 0 !important; }
+
+//
+// pr
+// --------------------------------------------------
+.pr{ position: relative; }
+
+//
+// dib
+// --------------------------------------------------
+.dib{ display: inline-block; }
+
+//
+// vertical-align
+// --------------------------------------------------
+.vm { vertical-align: middle!important; }
+.vt { vertical-align: top!important; }
+.vb { vertical-align: bottom!important; }

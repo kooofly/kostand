@@ -1,0 +1,138 @@
+<style type="text/css">
+    #modal .col-md-12 > h4{ margin-top: 20px; }
+</style>
+<section id="modal" class="demo">
+    <h1 class="title">
+        <span>模态框</span>
+        <span class="sub">Modal</span>
+    </h1>
+    <div class="body">
+        <div class="row">
+            <div class="col-md-12">
+                <p>所有提示风格要统一，统一用户情感体验，提示要直接了当，语言简练，说重点</p>
+                <p>没有title 就没有×，除非定制content的内容，这是一个简单的modals，复杂一点的见下面几个modals</p>
+                <p>提示语标点不要用感叹号，错误举例： 欢迎光临！</p>
+                <p>可以切换不同的模态框标题背景色来打造不同的弹窗，适用于不同状态的弹窗</p>
+            </div>
+            <div class="col-md-12">
+                <h4>确认框</h4>
+                <div class="wrap">
+                    <div class="wrap-modal">
+                        <div class="mask"></div>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    Confirm
+                                    提示要直接了当，简练，说重点
+                                </div>
+                                <div class="modal-footer no-border">
+                                    <button type="button" class="btn btn-primary">确定</button>
+                                    <button type="button" class="btn btn-link" data-dismiss="modal">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <h4>只有内容提示框</h4>
+                <div class="wrap">
+                    <div class="wrap-modal">
+                        <div class="mask"></div>
+                        <div class="modal-dialog modal-sm modal-dialog-no-title">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+                                </div>
+                                <div class="modal-body">
+                                    提示语标点不要用感叹号，错误举例： 欢迎光临！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <h4>成功无需确认提示框</h4>
+                <div class="wrap">
+                    <div class="wrap-modal">
+                        <div class="mask"></div>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <i class="icon icon-success text-success state"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <div>成功状态提示，自动消失，不需要用户确认</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <h4>错误状态提示</h4>
+                <div class="wrap">
+                    <div class="wrap-modal">
+                        <div class="mask"></div>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <i class="icon icon-error text-danger state"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            错误状态提示 <br>
+                                            <div class="sub">其他需要用户确认的状态也用这种方式</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer no-border">
+                                    <button type="button" data-dismiss="modal" class="btn btn-primary">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <h4>一个加载提示,加载成功自动消失</h4>
+                <div class="wrap">
+                    <div class="wrap-modal">
+                        <div class="mask"></div>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <i class="icon icon-loading text-info state"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            使出了吃奶的劲疯狂的加载中，拼了老命了 <span class="fs">...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="sub">带icon的弹窗，icon的字体设置大小为40px，line-height为1，,则刚好可以和右边的两行字上下对齐，如果只有一行，则上下间距为10px，保证了美观</p>
+            </div>
+        </div>
+
+    </div>
+</section>

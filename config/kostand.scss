@@ -9,12 +9,12 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #999 !default; // lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary: #3399ff !default;
+$brand-primary: #e44d4d !default;
 $brand-success: #33ff77 !default;
 $brand-info: #33ddff !default;
 $brand-warning: #ffbb33 !default;
 $brand-danger: #ff5533 !default;
-
+$brand-link-color: #3568cd !default
 $color-tips:            #FFFBE0 !default;
 
 //== Font
