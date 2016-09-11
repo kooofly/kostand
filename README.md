@@ -1,4 +1,2 @@
-# kooofly-bootui
-bootui
----
-svg + doc + ui creater
+web project ui standard generator
+Web项目UI规范生成器

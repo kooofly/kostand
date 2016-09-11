@@ -1,0 +1,161 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// 制作组件theme步骤：1.复制原始控件sass 2.修改或扩展
+// =========================================
+// Com
+// Colors
+// Buttons
+// Panels
+// Bg
+// =========================================
+
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables";
+@import "kostand";
+@import "mixins";
+
+i{ font-style: normal }
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+.bg-tips{ background: $color-tips; }
+.bg-main{ background: $gray-dark; color: #fff; }
+.bg-gray{ background: $gray; color: #fff; }
+.bg-gray-light{ background: $gray-light; color: #fff; }
+.text-gray, b{ color: $gray; }
+.text-gray-light{ color: $gray-light; }
+
+.font-lg, h1.title{ font-size: $font-size-large; }
+.font-sm, .sub { font-size: $font-size-small; color: $gray-light; }
+
+
+//== Com
+//
+//##
+.com { margin-bottom: 20px; }
+.com:last-child { margin-bottom: 0; }
+
+//
+// Buttons
+// --------------------------------------------------
+
+// Mixin for generating new styles
+@mixin btn-styles($btn-color: #555) {
+  background-color: darken($btn-color, 10%);
+  border-color: darken($btn-color, 14%);
+
+  &:hover,
+  &:focus {
+    background-color: darken($btn-color, 15%);
+    border-color: darken($btn-color, 25%);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: darken($btn-color, 10%);
+      border-color: darken($btn-color, 14%);
+    }
+  }
+
+  &.btn-hole {
+    background: #fff;
+    color: $gray;
+  }
+  &.btn-hole:hover,
+  &.btn-hole:focus  {
+    background-color: darken($btn-color, 12%);
+    color: #fff;
+  }
+}
+
+// Common styles
+.btn {
+  box-shadow: none;
+  @include btn-styles($btn-default-bg);
+  background: #fff;
+  border-color: #ccc;
+
+  &.btn-hole,
+  &.btn-hole:hover,
+  &.btn-hole:focus  {
+    color: $gray;
+  }
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      outline: none;
+    }
+  }
+}
+.btn i { margin-right: 6px; }
+
+// Common styles
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+  @include box-shadow($shadow);
+
+  // Reset the shadow
+  &:active,
+  &.active {
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    @include box-shadow(none);
+  }
+
+  .badge {
+    text-shadow: none;
+  }
+}
+
+.btn-primary { @include btn-styles($btn-primary-bg); }
+.btn-success { @include btn-styles($btn-success-bg); }
+.btn-info    { @include btn-styles($btn-info-bg); }
+.btn-warning { @include btn-styles($btn-warning-bg); }
+.btn-danger  { @include btn-styles($btn-danger-bg); }
+
+.btn-lg, .btn-group-lg > .btn{ border-radius: 2px; }
+
+
+//
+// Panels
+// --------------------------------------------------
+
+// Common styles
+.panel {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+//
+// Bg
+// --------------------------------------------------
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger{ color: #fff; }

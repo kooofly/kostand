@@ -1,0 +1,25 @@
+{
+  "name": "Kostand",
+  "version": "1.0.0",
+  "description": "web project standard generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm dist -r && mkdir dist && webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kooofly",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^0.24.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  }
+}

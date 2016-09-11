@@ -1,0 +1,103 @@
+<style type="text/css">
+    #margin .margin:after{ content: attr(data-margin) }
+</style>
+<section id="margin" class="demo">
+    <h1 class="title">
+        <span>间距</span>
+        <span class="sub">Margin</span>
+    </h1>
+    <div class="body">
+        <p>间距统一可以让页面像搭积木一样快速搭建，有利于组件化动态页面的开发</p>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th width="120">定义</th>
+                <th width="150">值</th>
+            </tr>
+            <tr>
+                <td>栅格系统</td>
+                <td>列间距 <code data-id="grid" class="margin"></code> <span class="sub">@variables.scss - Grid system</span></td>
+            </tr>
+            <tr>
+                <td>media</td>
+                <td>纵向：<code data-id="media-h-v" class="margin"></code>，内容：<code data-id="media-c-v" class="margin"></code></td>
+            </tr>
+            <tr>
+                <td>com <span class="sub">组件间距</span></td>
+                <td>纵向：<code data-id="com" class="margin"></code> <span class="sub">@kostand.scss - Com</span>，横向：<code data-id="grid" class=" margin"></code>（同栅格系统间距）</td>
+            </tr>
+            <tr>
+                <td>form</td>
+                <td>纵向：<code data-id="form" class="margin"></code>，横向：<code data-id="grid" class="margin"></code>（同栅格系统间距）</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<!--
+<div class="com">com1</div>
+<div class="com">com2</div>
+-->
+<script>
+    $(function () {
+        var g = (function getGridValue() {
+            var $el = $('<div class="col-md-6" />')
+            $el.appendTo('body')
+            var result = $el.css('padding-left')
+            result = result.replace('px', '')
+            $el.remove()
+            return result * 2
+        })()
+        var m = (function getMediaC() {
+            var $el = $('<div class="media" />')
+            var $el2 = $('<div class="media"><div class="media-left"></div></div>')
+            $el.appendTo('body')
+            $el2.appendTo('body')
+            var h = $el2.css('margin-top')
+            var c = $el2.children('.media-left').css('padding-right')
+            $el.remove()
+            $el2.remove()
+            return {
+                h: h,
+                c: c
+            }
+        })()
+        var com = (function getCom() {
+            var $el = $('<div class="com" />')
+            var $el2 = $('<div class="com" />')
+            $el.appendTo('body')
+            $el2.appendTo('body')
+            var result = $el.css('margin-bottom')
+            $el.remove()
+            $el2.remove()
+            return result
+        })()
+        var form = (function getForm() {
+            var $el = $('<div class="form-group" />')
+            $el.appendTo('body')
+            var result = $el.css('margin-bottom')
+            $el.remove()
+            return result
+        })()
+        $('#margin .margin').each(function () {
+            var result
+            var id = $(this).data('id')
+            switch (id) {
+                case 'grid':
+                    result = g
+                    break;
+                case 'media-h-v':
+                    result = m.h
+                    break;
+                case 'media-c-v':
+                    result = m.c
+                    break;
+                case 'com':
+                    result = com
+                    break;
+                case 'form':
+                    result = form;
+                    break;
+            }
+            $(this).attr('data-margin', typeof result === 'number' ? result + 'px' : result)
+        })
+    })
+</script>

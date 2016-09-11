@@ -1,0 +1,124 @@
+<style type="text/css">
+    #color .color--block { height: 40px; padding: 10px; text-align: center; line-height: 20px; }
+    #color .color--block:after { content: attr(data-color); display: block; }
+</style>
+<section id="color" class="demo">
+    <h1 class="title">
+        <span>色彩</span>
+        <span class="sub">Color</span>
+    </h1>
+    <div class="body">
+        <p>状态色和主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
+        <table class="table table-bordered table-hover">
+            <tbody><tr>
+
+                <th>定义</th>
+                <th width="150">颜色</th>
+                <th>使用场景</th>
+            </tr>
+            <tr>
+                <td class="text-center">
+                    主色
+                </td>
+                <td>
+                    <div class="color--block bg-primary"></div>
+                </td>
+
+                <td>
+                    主要用于统一网站风格，突出主要的按钮、链接
+                </td>
+            </tr>
+            <tr class="noborder">
+                <td rowspan="4" class="text-center">
+                    状态色
+                </td>
+                <td>
+                    <div class="color--block bg-success"></div>
+                </td>
+
+                <td>
+                    主要用于操作成功的提示信息
+                </td>
+            </tr>
+            <tr class="noborder">
+                <td>
+                    <div class="color--block bg-info"></div>
+                </td>
+                <td>
+                    主要用于无状态的提示信息,一些需要突出的重要小提示比较适合
+                </td>
+            </tr>
+            <tr class="noborder">
+                <td>
+                    <div class="color--block bg-danger"></div>
+                </td>
+
+                <td>
+                    主要用于操作前的出错提示和危险的操作按钮
+                    <div class="sub">如：删除按钮，出错提示的icon，表单验证出错的icon</div>
+                </td>
+            </tr>
+            <tr class="nobb">
+                <td>
+                    <div class="color--block bg-warning"></div>
+                </td>
+                <td>
+                    主要用于一些包含非预期结果操作的警告提示，防止用户不知情的改变数据，导致不期望的结果
+                    <div class="sub">如修改SKU信息会导致产品下架</div>
+                </td>
+            </tr>
+            <tr class="bt nobb">
+                <td class="text-center" rowspan="3">文字色</td>
+                <td><div class="color--block bg-main"></div></td>
+                <td>用于一般的文字和普通的标题信息</td>
+            </tr>
+            <tr class="nobb">
+                <td><div class="color--block bg-gray"></div></td>
+                <td>
+
+                    <h4 class="text-gray" style="margin: 0;"><b>用于加粗的大号文字，防止文字太突兀，我是加粗的大号字体标题</b></h4>
+                </td>
+            </tr>
+            <tr class="nobb">
+                <td><div class="color--block bg-gray-light"></div></td>
+                <td>
+                    用于辅助、次要文字信息、不重要的提示
+                    <div class="text-gray-light"><!--如说明文字、日期等，-->次要文字信息不使用偏浅的色值作文字色，如#ccc，无论是用白色还是深色作为背景都有对比度不高的问题，易导致视觉疲劳</div>
+
+                </td>
+            </tr>
+            <tr class="bt nobb">
+                <td class="text-center">
+                    辅助色
+                </td>
+                <td>
+                    <div class="color--block bg-tips"></div>
+                </td>
+                <td>
+                    主要用于网站头部或者底部一些可关闭的提示、含有复杂内容的列表hover状态背景色、当前选择背景
+                    <div class="text-gray-light">如表格tr:hover 用于辅助看清 列表左侧和右侧内容的对应关系</div>
+                </td>
+            </tr>
+            </tbody></table>
+    </div>
+</section>
+<script>
+
+    $(function() {
+        $.fn.getHexBackgroundColor = function() {
+            var rgb = $(this).css('background-color');
+            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            if (rgb && rgb[1]) {
+                rgb= "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+            }
+            function hex(x) {
+                return ("0" + parseInt(x).toString(16)).slice(-2);
+            }
+            return rgb || '';
+        }
+        $('.color--block').each(function () {
+            var color = $(this).getHexBackgroundColor()
+            $(this).attr('data-color', color)
+        })
+    })
+</script>

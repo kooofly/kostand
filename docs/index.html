@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kooofly Web UI Standard Generator</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1464246097_7792978.css"/>
+    <link rel="stylesheet" href="../dist/style.css"/>
+    <link rel="stylesheet" href="docs.css"/>
+</head>
+<body data-spy="scroll" data-target="#sidebar">
+<aside>
+    <div class="logo">
+        Kostand
+    </div>
+
+    <div id="sidebar">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#color">色彩</a></li>
+            <li><a href="#margin">间距</a></li>
+            <li><a href="#font">字体</a></li>
+            <li><a href="#layout">布局</a></li>
+            <li><a href="#button">按钮</a></li>
+            <li><a href="#modal">模态框</a></li>
+            <li><a href="#contrl">表单控件</a></li>
+            <li><a href="#animate">动画</a></li>
+            <li><a href="#icon">图标</a></li>
+            <li><a href="#other">其他组件</a></li>
+            <li><a href="#template">template</a></li>
+        </ul>
+    </div>
+</aside>
+<div class="cont">
+    <div class="top-bar bg-primary">
+        <div class="media">
+            <div class="media-left">
+                <div class="left">
+                    <div class="logo">
+                        Kostand
+                    </div>
+                    <div class="version">
+                        v 0.1.0
+                    </div>
+                </div>
+            </div>
+            <div class="media-body">
+                <div class="right">
+                    <div class="title">一个自定义的UI设计规范</div>
+                    <!--<div class="sub">自豪的使用KoooFly UI生成</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="quotation sub">
+            规范这东西，由少变多很简单；由多变少，呵呵，还是等下一个项目吧。谨慎的添加每一行规范，要不然就让那该死的（样式）变成一只特立独行的猪吧。
+            <div class="text-right">- Matias Duarte</div>
+        </div>
+
+        <div class="wrap" data-url="./kostand/color.html"></div>
+        <div class="wrap" data-url="./kostand/margin.html"></div>
+        <div class="wrap" data-url="./kostand/font.html"></div>
+        <div class="wrap" data-url="./kostand/layout.html"></div>
+        <div class="wrap" data-url="./kostand/button.html"></div>
+        <div class="wrap" data-url="./kostand/modal.html"></div>
+        <div class="wrap" data-url="./kostand/form.html"></div>
+
+        <section id="modal" class="demo">
+            <h1 class="title">
+                <span>模态框</span>
+                <span class="sub">Modal</span>
+            </h1>
+            <div class="body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>所有提示风格要统一，统一用户情感体验</p>
+                        <p>没有title 就没有×，除非定制content的内容，这是一个简单的modals，复杂一点的见下面几个modals</p>
+                        <p>提示要直接了当，语言简练，说重点</p>
+                        <p>提示语标点不要用感叹号，错误举例： 欢迎光临！</p>
+                        <p>可以切换不同的模态框标题背景色来打造不同的弹窗，适用于不同状态的弹窗</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            Confirm
+                                            提示要直接了当，简练，说重点
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">确定</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title">Modal title</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            提示语标点不要用感叹号，错误举例： 欢迎光临！
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>带icon的弹窗，icon的字体设置大小为40px，line-height为1，,则刚好可以和右边的两行字上下对齐，如果只有一行，则上下间距为10px，保证了美观</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-success text-success state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <div>成功状态提示，自动消失，不需要用户确认</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <i class="icon icon-error text-danger state"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    错误状态提示 <br>
+                                                    <div class="sub">其他需要用户确认的状态也用这种方式</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">确定</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>一个加载提示</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrap">
+                            <div class="wrap-modal">
+                                <div class="mask"></div>
+
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <i class="icon icon-loading text-info state"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                使出了吃奶的劲疯狂的加载中，拼了老命了 <span class="fs">...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="button2" class="demo">
+            <h1 class="title">
+                <span>按钮</span>
+                <span class="sub">Button</span>
+                <!--<select class="form-control form-control-w-sm">
+                    <option value="">选择按钮皮肤</option>
+                    <option value="1">theme 1</option>
+                    <option value="1">theme 2</option>
+                </select>-->
+            </h1>
+            <div class="body">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th width="120">定义</th>
+                        <th width="150">样式</th>
+                        <th>使用场景</th>
+                    </tr>
+                    <tr>
+                        <td>普通按钮</td>
+                        <td><button class="btn">按钮</button></td>
+                        <td>用于次要操作，一般用于取消，否定等操作</td>
+                    </tr>
+                    <tr>
+                        <td>主色按钮</td>
+                        <td><button class="btn btn-primary">按钮</button></td>
+                        <td>用于主要操作，用于保存，提交数据等操作</td>
+                    </tr>
+                    <tr>
+                        <td>icon按钮</td>
+                        <td><button class="btn btn-primary"><i class="icon icon-search"></i>按钮</button></td>
+                        <td>带icon的按钮，用icon来增强按钮的含义表现</td>
+                    </tr>
+                    <tr>
+                        <td>状态按钮</td>
+                        <td><button class="btn btn-danger">按钮</button></td>
+                        <td>
+                            普通尺寸danger按钮，用于主要操作，用于删除数据等危险操作
+                            <div class="sub">其它状态按钮（success、warning、info），用于多个操作的区分，小范围使用</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>小按钮</td>
+                        <td><button class="btn btn-sm">按钮</button></td>
+                        <td>
+                            用于多个操作的次要操作或用于行内有小form-control的情况，保持高度于form-control对齐
+                            <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>大按钮</td>
+                        <td><button class="btn btn-lg">大按钮</button></td>
+                        <td>
+                            <div>用于多个操作的次要操作或用于行内有小form-control的情况，保持高度于form-control对齐</div>
+                            <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>块状按钮</td>
+                        <td><button class="btn btn-block">按钮</button></td>
+                        <td>
+                            布局需要时使用，使用场景和<span class="text-info">普通按钮</span>相同
+                            <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>圆角按钮</td>
+                        <td><button class="btn btn-radius">按钮</button></td>
+                        <td>
+                            统一使用圆角按钮，或者统一使用方形按钮，避免同一个场景中使用两种不同的按钮破坏统一性
+                            <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>圆形按钮</td>
+                        <td><button class="btn btn-round">按钮</button></td>
+                        <td>
+                            在操作中有和按钮相关的动画，比如加载中的动画，或者配合设计需要来小范围使用
+                            <div class="sub">搭配不同状态来配合不同的使用场景</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="contrl" class="demo">
+            <h1 class="title">
+                <span>表单控件</span>
+                <span class="sub">Form Control</span>
+            </h1>
+            <div class="body">
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            自适应下拉菜单
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <select class="form-control">
+                            <option value="">选项</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            自适应输入框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control" type="text"/>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            固宽度输入框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-sm" type="text"/>
+                        <span class="sub demo-tip">根据计算所得 1170 col-md-4 (1170 = (<b>119</b> + 10 + 230 + 30) * 3) 由于浏览器计算精度问题，所以120宽度的label，计算之后实际宽度为119，下同</span>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label>
+                            固宽度输入框2
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" type="text"/>
+                        <span class="sub">根据计算所得 1170 col-md-6</span>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label>
+                            只读输入框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" readonly value="只读输入框" type="text"/>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label>
+                            禁用输入框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" disabled value="禁用输入框" type="text"/>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            单选框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <div class="group-inline">
+                            <label><input name="kf" type="radio"/> <span class="lb">选项1</span></label>
+                            <label><input name="kf" type="radio"/> <span class="lb">选项2</span></label>
+                            <label><input name="kf" disabled type="radio"/> <span class="lb">禁用选项</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            复选框
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <div class="group-inline">
+                            <label><input type="checkbox"/> <span class="lb">选项1</span></label>
+                            <label><input type="checkbox"/> <span class="lb">选项2</span></label>
+                            <label><input disabled type="checkbox"/> <span class="lb">禁用选项</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="media form-group">
+                    <div class="media-left">
+                        <label for="">
+                            混排
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <div class="control-wrap">
+                            <input class="form-control form-control-w-lg" placeholder="混排" type="text"/>
+                            <div class="tips bg-success">
+                                成功提示
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+                <div class="media media-top form-group has-error">
+                    <div class="media-left">
+                        <label for="">
+                            状态和提示
+                        </label>
+                    </div>
+                    <div class="media-body">
+                        <input class="form-control form-control-w-lg" placeholder="混排" type="text"/>
+                        <div class="help-block">
+                            错误提示
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="layout2" class="demo">
+            <h1 class="title">
+                <span>布局</span>
+                <span class="sub">Layout</span>
+            </h1>
+            <div class="body">
+                <div class="phone">
+                    <div class="cell media form-group">
+                        <div class="media-left">
+                            <label class="lbl-sm">手机标签</label>
+                        </div>
+                        <div class="media-body">
+                            <input class="form-control" placeholder="手机混排" type="text"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="animate2" class="demo">
+            <h1 class="title">
+                <span>动画</span>
+                <span class="sub">Animate</span>
+            </h1>
+            <div class="body">
+
+            </div>
+        </section>
+        <section id="icon2" class="demo">
+            <h1 class="title">
+                <span>图标</span>
+                <span class="sub">ICON</span>
+            </h1>
+            <div class="body">
+
+            </div>
+        </section>
+        <section id="other2" class="demo">
+            <h1 class="title">
+                <span>其他组件</span>
+                <span class="sub">Other</span>
+            </h1>
+            <div class="body">
+
+            </div>
+        </section>
+
+        <!--template start-->
+        <section id="template" class="demo">
+            <h1 class="title">
+                <span>template</span>
+                <span class="sub">Color</span>
+            </h1>
+            <h3 class="sub-title">辅助色</h3>
+            <div>
+                <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
+            </div>
+            <div class="row-flex">
+                <div class="col-8">
+                    <p><b>状态色</b></p>
+                    <p>主色具有统一饱和度、明度；文字色拥有相同的明度梯度；大部分的颜色都使用合适的方法生成</p>
+                </div>
+                <div class="col-16">
+                    <div class="wrap">
+                        <div style="height: 200px; background: #ccc;"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--template end-->
+    </div>
+
+</div>
+<script src="../assets/jquery.js"></script>
+<script src="../dist/kostand.js"></script>
+<script src="//cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
+<script src="./docs.js"></script>
+</body>
+</html>
