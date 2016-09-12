@@ -1,14 +1,15 @@
 function ajax(option) {
-    return $.ajax(option)
+    return util.ajax(option)
 }
 
+function isArray( value ) { return Object.prototype.toString.call( value ) === '[object Array]' }
 function Form(element, option) {
     this.option = $.extend({
         url: null,
         callback: function (res) {
             return res
         },
-        modelKey : 'data-name'
+        modelKey : 'data-name',
         validOption: {}
     }, option)
     this.$element = $(element)
@@ -24,17 +25,30 @@ Form.prototype = {
             this.option.url = $submit.data('action') || this.$element.attr('action')
         }
     },
-    valid: function (name) {
-        if (name) {
-            this.validElement(name)
-        } else {
-            this.validAll()
-        }
+    valid: function () {
+        return this.validAll()
     },
-    validAll: function () {},
-    validElement: function () {},
+    validAll: function () {
+        var options = $.extend({
+            onkeyup: false,
+            onfocusin: false,
+            /*onsubmit: true,
+             onfocusout: false,
+             onfocusin: false,
+             onkeyup: false,*/
+            ignore: '.ignore',
+
+        }, this.option.validOption || {});
+
+        var def = $.Deferred();
+        var $form = this.$element;
+        $form.validate(options);
+        $form.valid() ? def.resolve($form) : def.reject($form);
+
+        return def;
+    },
     data: function (key, value) {
-        if (key && typeof value === undefined) {
+        if (key && typeof value === 'undefined') {
             return this.getData(key)
         } else if (key && value) {
             this.setData(key, value)
@@ -46,48 +60,73 @@ Form.prototype = {
     getData: function (key) {
         var modelKey = this.option.modelKey
         var $target = this.$element.find('[' + modelKey +'=' + key +']')
-            return this.getSingleData($target)
+        return this.getSingleData($target)
+    },
+    _getType: function ($item) {
+        var result
+        var type = $item.attr('type')
+        if (type) {
+            result = type
+        } else {
+            type = $item[0].type
+            if (type === 'select-one') {
+                result = 'select'
+            } else {
+                result = type
+            }
+        }
+        return result
     },
     getSingleData: function ($item) {
         var modelKey = this.option.modelKey
         var name = $item.attr(modelKey)
         var val = $.trim($item.val())
+
         if (name === '') {
             return
         }
         // radio
-        if ($item.attr('type') === 'radio') {
+        if (this._getType($item) === 'radio') {
             val = '';
-            $form.find('input[' + modelKey + '=' + name + ']').each(function(i, v) {
+            $item.each(function(i, v) {
                 if($(v).is(':checked')) {
                     val = $(v).val()
                 }
             })
         }
         // checkbox
-        if ($item.attr('type') === 'checkbox') {
+        if (this._getType($item) === 'checkbox') {
             val = []
-            $form.find('input[' + modelKey + '=' + name + ']:checked').each(function(i, v) {
-                val.push($(v).val());
+            $item.each(function(i, v) {
+                if($(v).is(':checked')) {
+                    val.push($(v).val());
+                }
             })
             val = val.join(',')
         }
+        // textarea
+        if (this._getType($item) === 'textarea') {
+            val = $item.html()
+        }
         return val
-    }
+    },
     getAllData: function () {
         var self = this
         var modelKey = this.option.modelKey
         var result = {}
-         this.$element.find('[' + modelKey + ']').each(function (i ,v) {
+
+        var $form = this.$element
+        this.$element.find('[' + modelKey + ']').each(function (i ,v) {
             var nameSpace
             var $item = $(v)
             var name = $item.attr(modelKey)
             var val = $.trim($item.val())
+            var tempObj = {}
             if (name === '') {
                 return
             }
             // radio
-            if ($item.attr('type') === 'radio') {
+            if (self._getType($item) === 'radio') {
                 val = '';
                 $form.find('input[' + modelKey + '=' + name + ']').each(function(i, v) {
                     if($(v).is(':checked')) {
@@ -96,7 +135,7 @@ Form.prototype = {
                 })
             }
             // checkbox
-            if ($item.attr('type') === 'checkbox') {
+            if (self._getType($item) === 'checkbox') {
                 val = []
                 $form.find('input[' + modelKey + '=' + name + ']:checked').each(function(i, v) {
                     val.push($(v).val());
@@ -116,12 +155,52 @@ Form.prototype = {
             } else {
                 result[name] = val;
             }
-         })
-         return result
+        })
+        return result
     },
 
-    setData: function () {},
+    setData: function (name, value) {
+        var self = this
+        var modelKey = this.option.modelKey
+        var elements = {}
+        var type
+        this.$element.find('[' + modelKey + '=' + name + ']').each(function (i, v) {
+            var $item = $(v)
+            if (self._getType($item) === 'radio') {
+                // radio
+                if($item.val() == value) {
+                    $item.prop('checked', true)
+                }
+            } else if (self._getType($item) === 'checkbox') {
+                type = 'checkbox'
+                // checkbox
+                var checkVal = $item.val()
+                $item.prop('checked', false)
+                elements[checkVal] = $item
+            } else if (self._getType($item) === 'select') {
+                $item.children('option').each(function (i ,v) {
+                    if(v.value == value) {
+                        v.selected = true
+                    }
+                })
+            } else if (self._getType($item) === 'textarea') {
+                $item.html(value)
+            } else {
+                // text select
+                $item.val(value)
+            }
+        })
 
+        if (type === 'checkbox') {
+            if (isArray(value)) {
+                for (var m = 0, l = value.length; m < l; m++) {
+                    elements [ value[m] ] && elements [ value[m] ].prop('checked', true)
+                }
+            } else {
+                elements [ value ] && elements[value].prop('checked', true)
+            }
+        }
+    },
     submit: function (option) {
         var ajaxOpt
         var e
@@ -133,11 +212,14 @@ Form.prototype = {
             ajaxOpt = option
         }
         var self = this
-        return ajax($.extend({
-            url: this.url,
-            data: this.data()
-        }, ajaxOpt)).done(function (res) {
-            return self.option.callback(res)
+        return this.valid().done(function () {
+            return ajax($.extend({
+                url: self.url,
+                data: self.data()
+            }, ajaxOpt)).done(function (res) {
+                return self.option.callback(res)
+            })
         })
     }
 }
+window.Form = Form

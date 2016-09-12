@@ -9,6 +9,9 @@ module.exports = {
     entry: {
         index: path.resolve(ROOT_PATH, 'index.js')
     },
+    externals: {
+        jquery: 'window.$'
+    },
     output: {
         path: __dirname + '/dist',
         filename: config.project + '.js'
@@ -36,6 +39,7 @@ module.exports = {
         ]
     },
     plugins: [
+        /*new webpack.optimize.CommonsChunkPlugin('jquery',  'jquery.js'),*/
         new ExtractTextPlugin(config.project + '.css')
     ]
 }
