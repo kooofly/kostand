@@ -19,7 +19,7 @@ Form.prototype = {
     init: function () {
         var $submit = this.$element.find('[data-role=submit]')
         if ($submit.length) {
-            $submit.on(this.option.submitEvent || 'click', $.proxy(this, 'submit'))
+            $submit.on(this.option.submitEvent || 'click', this, $.proxy(this, 'submit'))
         }
         if (!this.option.url) {
             this.option.url = $submit.data('action') || this.$element.attr('action')
@@ -204,18 +204,21 @@ Form.prototype = {
     submit: function (option) {
         var ajaxOpt
         var e
+        var self
         if (option.target) {
             e = option
             e.preventDefault()
             ajaxOpt = $(e.target).data('option') || {}
+            self = e.data
         } else {
             ajaxOpt = option
+            self = this
         }
-        var self = this
         return this.valid().done(function () {
+            var data = self.data()
             return ajax($.extend({
                 url: self.url,
-                data: self.data()
+                data: data
             }, ajaxOpt)).done(function (res) {
                 return self.option.callback(res)
             })
