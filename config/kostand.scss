@@ -14,7 +14,7 @@ $brand-success: #33ff77 !default;
 $brand-info: #33ddff !default;
 $brand-warning: #ffbb33 !default;
 $brand-danger: #ff5533 !default;
-$brand-link-color: #3568cd !default
+$brand-link-color: $brand-primary !default // 3568cd
 $color-tips:            #FFFBE0 !default;
 
 //== Font
