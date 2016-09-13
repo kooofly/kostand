@@ -1,15 +1,31 @@
-.form-horizontal{ margin: 5px -15px 5px 0; }
+.form-horizontal{
+  margin: 5px -15px 5px 0;
+  .control-label{ width: 120px; font-weight: 400; padding-left: 0; padding-right: 0; }
+  .offset{ margin-left: 120px; }
+  .has-feedback .input-group .form-control-feedback{ right: 0; }
+}
+.form .control-label,
 .form-horizontal .control-label{ width: 120px; font-weight: 400; padding-left: 0; padding-right: 0; }
-.form-horizontal .col-sm-offset-2,
-.form-horizontal .col-md-offset-2,
-.form-horizontal .col-xs-offset-2{ margin-left: 120px; }
+.form {
+  .form-group {
+    @include make-row;
+  }
+  .control-label{
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: ($padding-base-vertical + 1); // Default padding plus a border
+  }
+}
+.form-sm {
+  .control-label{ width: 80px; }
+}
+
+
 .form-control{ border-radius: 1px; box-shadow: none; }
 .control-label i{ margin-right: 4px; }
 .form-control:focus{ box-shadow: none; }
 .help-block { margin-bottom: 0; }
 .help-block i{ margin-right: 4px; }
-
-.form-horizontal .has-feedback .input-group .form-control-feedback{ right: 0; }
 
 .input-group .form-control:focus + .form-control-feedback{ z-index: 4; }
 
@@ -31,3 +47,7 @@
 
 .form-actions{ margin-top: 30px; }
 .form-actions .btn{ margin: 0 10px; }
+
+.caret-up { border-bottom: 4px dashed; border-top: 0; }
+
+.btn-group .btn{ line-height: 1.2; }

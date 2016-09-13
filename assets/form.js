@@ -22,7 +22,7 @@ Form.prototype = {
             $submit.on(this.option.submitEvent || 'click', this, $.proxy(this, 'submit'))
         }
         if (!this.option.url) {
-            this.option.url = $submit.data('action') || this.$element.attr('action')
+            this.option.url = $submit.data('url') || this.$element.attr('action')
         }
     },
     valid: function () {
@@ -214,6 +214,7 @@ Form.prototype = {
             ajaxOpt = option
             self = this
         }
+        self.model = self.data()
         return this.valid().done(function () {
             var data = self.data()
             return ajax($.extend({

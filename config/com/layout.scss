@@ -1,3 +1,4 @@
+body{ font-family: "Microsoft YaHei", sans-serif; }
 .container{ background: #f1f2f5; width: 1160px; }
 .header{ background: #fff; box-shadow: 0 2px 3px -3px $gray-dark; line-height: 20px; }
 .header .nav a{ padding: 13px 15px; color: $gray-dark; border-radius: 0; }
@@ -10,7 +11,7 @@
 .header .right .name a{ margin-left: 6px; }
 .aside { background: #e8eaf0; padding-right: 0; margin-right: 10px;  }
 .aside .nav{ width: 210px; background: #e8eaf0; }
-.aside .nav a{ background: transparent; color: $gray-dark; padding-left: 30px; padding-right: 30px; border-radius: 0; }
+.aside .nav a{ background: transparent; color: $gray-dark; padding: 15px 30px; border-radius: 0; }
 .aside .nav li{ border-bottom: 1px solid #d0d3d8; }
 .aside .nav-stacked>li+li{ margin-top: 0; }
 .aside .nav .active a,

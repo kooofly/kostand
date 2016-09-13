@@ -9,3 +9,19 @@
 .table .checkbox-inlnie{ line-height: 1; }
 .table label{ margin-bottom: 0; }
 .table p { margin-bottom: 4px; }
+
+.table-complex-wrapper .table{ margin-bottom: 0; }
+.table-complex { overflow: hidden; }
+.table-complex .table > thead > tr > th{ background: #ebf8ff; }
+.table-complex:hover{ border-color: #bebebe; }
+.table-complex .inner{ margin: -1px; }
+.table-complex .table{ margin: 0; }
+.no-border-lr{ border-left: 0 !important; border-right: 0 !important; }
+
+.col-1{ width: 60px; }
+.col-2{ width: 90px; }
+.col-3{ width: 120px; }
+.col-4{ width: 150px; }
+.col-5{ width: 180px; }
+.col-6{ width: 210px; }
+.col-7{ width: 240px; }

@@ -6,8 +6,13 @@
     <h1 class="title">
         <span>表格</span>
         <span class="sub">Table</span>
+        <span class="sub">表格 <code>td,th</code>留白 <code>10px</code>，同一 <code>th</code>不同内容横向间距 <code>30px</code> 同一 <code>td</code>不同内容横向间距 <code>15px</code></span>
     </h1>
     <div class="body">
+        <h4>
+            <span>简单表格</span>
+            <span class="sub">table-default</span>
+        </h4>
         <table class="table table-default table-hover">
             <thead>
             <tr>
@@ -48,7 +53,7 @@
                 <td class="text-center vm">
 
                     <p>已完成</p>
-                    <div><a href="#">详情</a></div>
+                    <a href="#">详情</a>
                 </td>
                 <td class="text-center vm"><span class="label label-danger">红卡户</span></td>
                 <td class="text-center vm">
@@ -87,6 +92,173 @@
             </tr>
 
         </table>
+        <h4>
+            <span>复杂表格</span>
+            <span class="sub">table-complex</span>
+        </h4>
+        <div class="table-complex-wrapper">
+            <table class="table table-default">
+                <col>
+                <col class="col-2">
+                <col class="col-1">
+                <col class="col-2">
+                <col class="col-3">
+                <col class="col-2">
+                <col class="col-3">
+                <thead>
+                <tr>
+                    <th class="text-center">商品信息</th>
+                    <th class="text-center">单价</th>
+                    <th class="text-center">数量</th>
+                    <th class="text-center">售后</th>
+                    <th class="text-center">买家</th>
+                    <th class="text-center">订单状态</th>
+                    <th class="text-center">实付金额</th>
+                </tr>
+                </thead>
+            </table>
+
+            <div class="table-complex mt15 table-bordered">
+                <div class="inner">
+                    <table class="table table-default table-bordered">
+                        <colgroup>
+                            <col>
+                            <col class="col-2">
+                            <col class="col-1">
+                            <col class="col-2">
+                            <col class="col-3">
+                            <col class="col-2">
+                            <col class="col-3">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="7">
+                                <span class="pr15">订单号：762587124878235-3546567-90345</span>
+                                <span class="pl15">成交时间：2016-10-15</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="7">
+                                <a href="#">包裹-1</a>
+                                <span class="pl15">邮政国内小包</span>
+                                <span class="pl15">运单号：234320845437-234234</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="../assets/images/logo.jpg" width="50" height="50" alt="">
+                                    </div>
+                                    <div class="media-body vm">
+                                        <span>草本牛肉干 出手工零食包 现货 袋装 108g</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center vm">
+                                <i class="icon icon-rmb"></i>200
+                            </td>
+                            <td class="text-center vm">
+                                5
+                            </td>
+                            <td></td>
+                            <td class="text-center vm">
+                                <p>呼啦圈</p>
+                                <span>15289387478</span>
+                            </td>
+                            <td class="text-center vm">
+                                <p>已完成</p>
+                                <a href="#">详情</a>
+                            </td>
+                            <td class="text-center vm">
+                                <i class="icon icon-rmb"></i>234
+                                <div class="sub">（含邮费：0.00）</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-complex mt15 table-bordered">
+                <div class="inner">
+                    <table class="table table-default table-bordered">
+                        <colgroup>
+                            <col>
+                            <col class="col-2">
+                            <col class="col-1">
+                            <col class="col-2">
+                            <col class="col-3">
+                            <col class="col-2">
+                            <col class="col-3">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th colspan="7">
+                                <span class="pr15">订单号：762587124878235-3546567-90345</span>
+                                <span class="pl15">成交时间：2016-10-15</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="no-border-lr">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="../assets/images/logo.jpg" width="50" height="50" alt="">
+                                    </div>
+                                    <div class="media-body vm">
+                                        <span>草本牛肉干 出手工零食包 现货 袋装 108g</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center vm no-border-lr">
+                                <i class="icon icon-rmb"></i>200
+                            </td>
+                            <td class="text-center vm no-border-lr">
+                                5
+                            </td>
+                            <td class="no-border-lr"></td>
+                            <td rowspan="2" class="text-center vm">
+                                <p>呼啦圈</p>
+                                <span>15289387478</span>
+                            </td>
+                            <td rowspan="2" class="text-center vm">
+                                <p>已完成</p>
+                                <a href="#">详情</a>
+                            </td>
+                            <td rowspan="2" class="text-center vm">
+                                <i class="icon icon-rmb"></i>234
+                                <div class="sub">（含邮费：0.00）</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-border-lr">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="../assets/images/logo.jpg" width="50" height="50" alt="">
+                                    </div>
+                                    <div class="media-body vm">
+                                        <span>草本牛肉干 出手工零食包 现货 袋装 108g</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center vm no-border-lr">
+                                <i class="icon icon-rmb"></i>200
+                            </td>
+                            <td class="text-center vm no-border-lr">
+                                5
+                            </td>
+                            <td class="no-border-lr"></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <script>
