@@ -22,9 +22,15 @@ require("./assets/handlebars.extend.js")
 
 require("./node_modules/jquery-validation/dist/jquery.validate.js")
 require("./assets/validate.extend.js")
+
+$.plugs = {}
 require("./assets/modals")
-require("./assets/util")
+var util = require("./assets/util")
+
 require("./assets/form")
 require("./assets/search")
+require("./assets/searchSystem")
+require("./assets/status")
+require("./assets/pagination")
 
 require('./config/theme.scss')

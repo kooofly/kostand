@@ -85,5 +85,5 @@
             })
         }
     }
-    window.modals = modals
+    $.plugs.modals = modals
 })()

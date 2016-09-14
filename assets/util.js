@@ -25,8 +25,8 @@ function arrayLikeToArray( arrayLike ) {
         isUndefined, isDefined, isObject, isJsonObject, isString, isNumber, isDate, isArray, isFunction, getMethodName, sliceArgs, arrayLikeToArray]
     for ( var i = 0, j = _exports.length; i < j; i++ ) {
         var obj = _exports[i]
-        name = getMethodName(obj)
-        v = obj
+        var name = getMethodName(obj)
+        var v = obj
         util[name] = v
     }
 })();

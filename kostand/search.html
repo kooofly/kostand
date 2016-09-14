@@ -7,26 +7,24 @@
         <div class="panel">
             <div class="panel-body">
 
-                <div class="status com">
-                    <a class="active item" href="javascript:;">全部</a>
+                <div class="status com" data-role="status">
+                    <a class="active item" data-toggle="status" data-value="1" href="javascript:;">全部</a>
                     <span class="diver"></span>
-                    <a class=" item" href="javascript:;">待付款</a>
+                    <a class="item" data-toggle="status" data-value="2" href="javascript:;">待付款</a>
                     <span class="diver"></span>
-                    <label class=" item">待发货</label>
-                    <a class="diver" href="javascript:;"></a>
-                    <label class=" item">已发货</label>
+                    <a class="item" data-toggle="status" data-value="3" href="javascript:;">待发货</a>
+                    <span class="diver"></span>
+                    <a class="item" data-toggle="status" data-value="4" href="javascript:;">已发货</a>
                 </div>
 
                 <form class="search form form-sm com" role="form" action="form.html">
 
-
-
                     <div class="form-group has-feedback clearfix">
                         <div class="col-sm-3">
                             <div class="input-group">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" data-role="simple" data-name="key">
                                   <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">搜索</button>
+                                    <button class="btn btn-default" data-role="search" type="button">搜索</button>
                                   </span>
                             </div>
 
@@ -129,6 +127,9 @@
 </section>
 <script>
     $(function () {
-        new Search('.search')
+        //new Search('.search')
+        $('.status').on('change', function (e, v) {
+            console.log(v)
+        })
     })
 </script>
