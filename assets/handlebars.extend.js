@@ -1,34 +1,37 @@
-//补充handlebars的if
 if(typeof Handlebars !== 'undefined') {
-    Handlebars.registerHelper("if2",function(v1, v2, v3, options){
-        var ret,
-            val = options.fn(this),
-            inverse = options.inverse(this);
+    Handlebars.registerHelper("if",function(v1, symbol, v2, options) {
+        var result
+        if (typeof symbol !== 'string') {
+            options = symbol
+            var conditional = v1
+            if (Handlebars.Utils.isFunction(conditional)) { conditional = conditional.call(this); }
 
-        switch (v2) {
-            case "==":
-            case "===":
-                ret = (v1 === v3 ? val : inverse);
-                break;
-            case ">":
-                ret = (v1 > v3 ? val : inverse);
-                break;
-            case "<":
-                ret = (v1 < v3 ? val : inverse);
-                break;
-            case ">=":
-                ret = (v1 >= v3 ? val : inverse);
-                break;
-            case "<=":
-                ret = (v1 <= v3 ? val : inverse);
-                break;
-            case "!=":
-                ret = (v1 != v3 ? val : inverse);
-                break;
-
+            if ((!options.hash.includeZero && !conditional) || Handlebars.Utils.isEmpty(conditional)) {
+                result = options.inverse(this);
+            } else {
+                result = options.fn(this);
+            }
+        } else {
+            switch (symbol) {
+                case '==':
+                    result = (v1 == v2 ? options.fn(this) : options.inverse(this))
+                    break;
+                case "===":
+                    result = (v1 === v2 ? options.fn(this) : options.inverse(this))
+                    break;
+                case ">":
+                    result = (v1 > v2 ? options.fn(this) : options.inverse(this))
+                    break;
+                case "<":
+                    result = (v1 < v2 ? options.fn(this) : options.inverse(this))
+                    break;
+                case "!=":
+                    result = (v1 != v2 ? options.fn(this) : options.inverse(this))
+                    break;
+            }
         }
+        return result
 
-        return ret;
     });
     Handlebars.registerHelper('toFixed', function(v, digits, option) {
         var result
