@@ -5,16 +5,19 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 // 定义了一些文件夹的路径
 var ROOT_PATH = path.resolve(__dirname);
 
+var entry = {}
+// 主入口文件
+entry[config.project] = path.resolve(ROOT_PATH, 'index.js')
+// vue && vue组件
+entry['vuec'] = path.resolve(ROOT_PATH, 'vuec.js')
 module.exports = {
-    entry: {
-        index: path.resolve(ROOT_PATH, 'index.js')
-    },
+    entry: entry,
     externals: {
         jquery: 'window.$'
     },
     output: {
         path: __dirname + '/dist',
-        filename: config.project + '.js'
+        filename: '[name].js'
     },
     // 'source-map' or 'inline-source-map'
     devtool: '#source-map',
@@ -44,5 +47,6 @@ module.exports = {
     ]
 }
 if (process.env.NODE_ENV !== 'production') {
+    console.log('aaa:', process.env.NODE_ENV)
     module.exports.output.publicPath = '/dist/'
 }

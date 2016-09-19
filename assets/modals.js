@@ -41,7 +41,7 @@
                 option.callback(false)
             })
         } else {
-            $('#modal-success .message').html(option.message)
+            $('#modal-confirm .message').html(option.message)
         }
         $('#modal-confirm').modal('show')
     }

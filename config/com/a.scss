@@ -1,0 +1,12 @@
+a {
+  color: $color-link;
+  &:hover {
+    color: darken($color-link, 15%);
+  }
+  &.text {
+    color: $gray-dark
+  }
+  &.text:hover{
+    color: darken($gray-dark, 15%);
+  }
+}

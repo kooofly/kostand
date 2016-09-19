@@ -25,7 +25,9 @@ require("./assets/validate.extend.js")
 
 $.plugs = {}
 require("./assets/modals")
-var util = require("./assets/util")
+require("./assets/util")
+require("./assets/app")
+require("./assets/layout")
 
 require("./assets/form")
 require("./assets/search")

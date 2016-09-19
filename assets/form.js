@@ -211,11 +211,9 @@
                 self = this
             }
 
-            if (!ajaxOpt || !ajaxOpt.data) {
-                self.model = self.data()
-            }
+            self.model = self.data()
             return this.valid().then(function () {
-                self.currentAjaxOpt = $.extend({
+                self.currentAjaxOpt = $.extend({}, {
                     url: self.option.url,
                     data: self.model
                 }, ajaxOpt)

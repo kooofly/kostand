@@ -1,8 +1,10 @@
 (function () {
     function Search (element, option) {
-        this.option = option || {
-                isSearchNow: true // 刚进入页面默认搜索一次
-            }
+        this.option = $.extend({
+            url: null,
+            isSearchNow: true, // 刚进入页面默认搜索一次
+            beforeSearch: null, // 搜索前处理
+        }, option)
         this.$element = $(element)
         this.form = new $.plugs.Form(element, option || {})
         this.model = this.form.model
@@ -37,7 +39,7 @@
         initSimpleSearch: function () {
             var self = this
             this.$element.find('[data-role=search]').on('click', function () {
-
+                e.preventDefault()
                 var data = {}
                 var $simpleInput = self.$element.find('[data-role=simple]')
                 data[$simpleInput.attr('data-name')] = $simpleInput.val()
@@ -49,13 +51,22 @@
         initSearch: function () {
             var self = this
             this.$element.find('[data-role=submit]').unbind('click')
-            this.$element.find('[data-role=submit]').on('click', function () {
+            this.$element.find('[data-role=submit]').on('click', function (e) {
+                e.preventDefault()
                 self.search()
             })
         },
         search: function (option) {
             var self = this
-            this.form.submit(option ? option : null).done(function (res) {
+            var opt
+            if (self.option.beforeSearch) {
+                opt = {
+                    data: self.option.beforeSearch.call(self, option)
+                }
+            } else {
+                opt = option ? option : null
+            }
+            this.form.submit(opt).done(function (res) {
                 self.$element.trigger('search', res, self)
             })
         }

@@ -133,8 +133,7 @@ util.ajaxCore = function (ajaxOpt) {
 }
 util.ajax = function (option) {
     return this.ajaxCore($.extend({type: 'post', dataType: "json"}, option)).fail(function(res) {
-        //TODO 统一数据格式
-        util.alert(res.info || res.result);
+        $.plugs.modals.error(res.info || res.result);
         return res;
     })
 }
