@@ -38,7 +38,7 @@
         },
         initSimpleSearch: function () {
             var self = this
-            this.$element.find('[data-role=search]').on('click', function () {
+            this.$element.find('[data-role=search]').on('click', function (e) {
                 e.preventDefault()
                 var data = {}
                 var $simpleInput = self.$element.find('[data-role=simple]')

@@ -1,0 +1,45 @@
+<section id="linkage" class="demo">
+    <h1 class="title">
+        <span>级联控件</span>
+        <span class="sub">Linkage</span>
+    </h1>
+    <div class="body">
+        <div class="panel">
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"><i class="text-danger">*</i>商品类型：</label>
+                        <div class="col-sm-5">
+                            <select id="a" name="" class="form-control">
+                                <option value="">请选择类目</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-5">
+                            <select id="b" class="form-control">
+                                <option value="">请选择二级类目</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    new $.plugs.Linkage([
+        {
+            element: '#a',
+            url: '../kostand/linkage.json',
+            firstOption: '请选择',
+            default: 'xx',
+            textKey: 'text',
+            valueKey: 'value'
+        },
+        {
+            element: '#b',
+            url: '../kostand/linkage.json?a={a}',
+            default: 'yy'
+        },
+    ])
+</script>

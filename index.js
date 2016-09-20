@@ -34,5 +34,6 @@ require("./assets/search")
 require("./assets/searchSystem")
 require("./assets/status")
 require("./assets/pagination")
+require("./assets/linkage")
 
 require('./config/theme.scss')
