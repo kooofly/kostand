@@ -137,7 +137,20 @@
 <script src="./assets/jquery.js"></script>
 
 <script src="./dist/kostand.js"></script>
+<script src="./dist/vuec.js"></script>
 <script src="//cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
 <script src="./docs/docs.js"></script>
+<script>
+    window.uploadButton = this.uploadButton = new UploadButton({
+        el: '#uploadButton',
+        data: {
+            limit: 1,
+            replace: true,
+            images: image ? [
+                image
+            ] : []
+        }
+    })
+</script>
 </body>
 </html>
