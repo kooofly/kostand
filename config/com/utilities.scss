@@ -6,6 +6,11 @@ i{ font-style: normal }
 .bg-main{ background: $gray-dark; color: #fff; }
 .bg-gray{ background: $gray; color: #fff; }
 .bg-gray-light{ background: $gray-light; color: #fff; }
+.bg-gray-bg { background: $color-gray-bg; }
+.bg-white-hover { background: $color-white-hover-bg; }
+.bg-gray-border { background: $color-border; }
+.bg-link { background: $color-link; color: #fff; }
+.bg-active-bg { background: $color-active-bg; }
 
 .bg-success,
 .bg-info,

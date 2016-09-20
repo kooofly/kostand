@@ -1,0 +1,41 @@
+<section id="datepicker" class="demo">
+    <h1 class="title">
+        <span>日历控件</span>
+        <span class="sub">Datepicker</span>
+    </h1>
+    <div class="body">
+        <div class="panel">
+            <div class="panel-body">
+                <form class="form-horizontal" action="">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label">日期区间：</label>
+                        <div class="col-sm-7">
+                            <div class="input-group input-range">
+                                <div class="pr">
+                                    <input id="startDate" type="text" class="form-control" name="start" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'endDate\')}'})" placeholder="开始时间">
+                                    <span class="icon icon-calendar form-control-feedback"></span>
+                                </div>
+                                <span class="input-group-addon">-</span>
+                                <input id="endDate" type="text" class="form-control" name="end" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'startDate\')}',maxDate:'2020-10-01'})" placeholder="结束时间">
+                                <span class="icon icon-calendar form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label">日期：</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" onfocus="WdatePicker()" placeholder="">
+                            <span class="icon icon-calendar form-control-feedback"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script src="../assets/My97DatePicker/WdatePicker.js"></script>
+<script>
+
+</script>

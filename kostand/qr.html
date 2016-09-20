@@ -1,0 +1,37 @@
+<section id="qr" class="demo">
+    <h1 class="title">
+        <span>二维码推广</span>
+        <span class="sub">Qr</span>
+    </h1>
+    <div class="body">
+        <div class="panel">
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">二维码：</label>
+                        <div class="col-sm-4">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="" width="62" height="62" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <p>店铺推广链接</p>
+                                    <div class="input-group">
+                                        <input id="qr-input" type="text" value="http://w.url.cn/s/fadfhJERFJA" readonly class="form-control">
+                                      <span class="input-group-btn">
+                                        <button data-copy="#qr-input" data-role="zclip" class="btn btn-default" type="button">复制</button>
+                                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    new $.plugs.Zclip('[data-role=zclip]')
+</script>

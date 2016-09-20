@@ -14,15 +14,19 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #999 !default; // lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary: #e44d4d !default;
-$brand-success: #33ff77 !default;
-$brand-info: #33ddff !default;
-$brand-warning: #ffbb33 !default;
-$brand-danger: #ff5533 !default;
-$brand-link-color: $brand-primary !default // 3568cd
-$color-tips:            #FFFBE0 !default;
-$color-link:#3568cd !default
+$brand-primary:          #e44d4d !default;
+$brand-success:          #33ff77 !default;
+$brand-info:             #33ddff !default;
+$brand-warning:          #ffbb33 !default;
+$brand-danger:           #ff5533 !default;
+$brand-link-color:       $brand-primary !default // 3568cd
+$color-tips:             #FFFBE0 !default; // 【这个未使用】 主要用于网站头部或者底部一些可关闭的提示、含有复杂内容的列表hover状态背景色、当前选择背景 如表格tr:hover 用于辅助看清 列表左侧和右侧内容的对应关系
+$color-link:             #3568cd !default; // a链接颜色
+$color-border:           #e8eaf0 !default; // 用于各种边框
 
+$color-gray-bg:          #f1f2f6 !default; // 灰色背景 用于表头等
+$color-active-bg:        #ebf8ff !default; // 灰色背景 用于表头等
+$color-white-hover-bg:   #f9f9f9 !default; // 项目hover背景 用于tr:hover等
 // =========================================
 // Colors
 // Typography
@@ -181,7 +185,7 @@ $table-bg-hover:                #f5f5f5 !default;
 $table-bg-active:               $table-bg-hover !default;
 
 //** Border color for table and cell borders.
-$table-border-color:            #ddd !default;
+$table-border-color:             $color-border !default;
 
 
 //== Buttons

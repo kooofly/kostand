@@ -7,16 +7,16 @@
 .table-default > tbody > tr > th,
 .table-default > tbody > tr > td,
 .table-default > tfoot > tr > th,
-.table-default > tfoot > tr > td{ border-color: #e8eaf0; padding: 10px; }
-.table-hover > tbody > tr:hover{ background: #f9f9f9; }
+.table-default > tfoot > tr > td{ border-color: $table-border-color; padding: 10px; }
+.table-hover > tbody > tr:hover{ background: $color-white-hover-bg; }
 .table .checkbox-inlnie{ line-height: 1; }
 .table label{ margin-bottom: 0; }
 .table p { margin-bottom: 4px; }
 
 .table-complex-wrapper .table{ margin-bottom: 0; }
 .table-complex { overflow: hidden; }
-.table-complex .table > thead > tr > th{ background: #ebf8ff; }
-.table-complex:hover{ border-color: #bebebe; }
+.table-complex .table > thead > tr > th{ background: $color-active-bg; }
+.table-complex:hover{ border-color: darken($table-border-color, 15%); }
 .table-complex .inner{ margin: -1px; }
 .table-complex .table{ margin: 0; }
 .no-border-lr{ border-left: 0 !important; border-right: 0 !important; }
@@ -28,3 +28,17 @@
 .col-5{ width: 180px; }
 .col-6{ width: 210px; }
 .col-7{ width: 240px; }
+
+.table-bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+}

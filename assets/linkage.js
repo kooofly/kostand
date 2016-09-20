@@ -58,9 +58,7 @@
         ready: function (opt) {
             var self = this
             $(opt.element).on('ready', function (e, currentOpt, index) {
-
                 if (currentOpt.default) {
-                    console.log(currentOpt, index)
                     self.renderAjaxData(self.option[index + 1], index + 1)
                 }
             })
