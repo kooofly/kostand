@@ -87,5 +87,12 @@
 
 </section>
 <script>
-
+    window.Upload = this.Upload = new Upload({
+        el: '#uploadButton',
+        data: {
+            limit: 1,
+            replace: true,
+            images: []
+        }
+    })
 </script>

@@ -19,8 +19,8 @@
 #upload-modal .uploadManager .close:hover{ color: #e14430; }
 #upload-modal .uploadManager .groups{width: 180px;}
 #upload-modal .uploadManager .groups .active{ background: #fff; }
-#upload-modal .uploadManager .main{background: #fff;padding: 0 10px 0 0;}
-#upload-modal .uploadManager .list{width: 786px;margin-left: 8px;min-height: 495px;}
+#upload-modal .uploadManager .main{background: #fff;padding: 0 10px 0 0; min-height: auto;}
+#upload-modal .uploadManager .list{width: 784px;margin-left: 8px;min-height: 495px;}
 #upload-modal .uploadManager .list .item .control-add{display: block;margin: 10px 5px 0;width: 120px;height: 120px;text-align: center;border: 1px solid #ccc;color: #ccc;}
 #upload-modal .uploadManager .list .item .control-add .icon{font-size: 60px;line-height: 120px;}
 #upload-modal .uploadManager .list .item img{width: 120px;height: 120px;}
@@ -67,3 +67,13 @@
 .uploadManager .list .item .handler {margin: 2px 5px 0;}
 .uploadManager .list .item .handler .progress{ height: 2px; }
 .uploadManager .list .item .handler a{display: inline-block;margin: 0 10px 0 0;}
+
+#previewsContainer{float: left;display: none;}
+.ov{ overflow: visible!important; }
+.uploadM{ font-size: 0; overflow: visible!important; }
+.uploadM .model{ display: inline-block; }
+.uploadM .model .item{ position: relative; margin-right: 10px; overflow: visible; }
+.uploadM .model .item .fa{position: absolute;font-size: 20px;top: -9px;right: -5px;background: #fff;border-radius: 50%; cursor: pointer; }
+.uploadM img{width: 60px;height: 60px;vertical-align: top;}
+.uploadM .control-upload-btn { width: 60px; height: 60px; border: 1px solid #ccc;  text-align: center; display: inline-block; vertical-align: top }
+.uploadM .control-upload-btn .icon{  font-size: 40px; color: #ccc; line-height: 60px; }

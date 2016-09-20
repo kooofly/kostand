@@ -47,6 +47,5 @@ module.exports = {
     ]
 }
 if (process.env.NODE_ENV !== 'production') {
-    console.log('aaa:', process.env.NODE_ENV)
     module.exports.output.publicPath = '/dist/'
 }

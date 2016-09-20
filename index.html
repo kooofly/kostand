@@ -32,6 +32,7 @@
             <li><a href="#form">表单</a></li>
             <li><a href="#linkage">级联控件</a></li>
             <li><a href="#datepicker">日期控件</a></li>
+            <li><a href="#uploader">上传控件</a></li>
             <li><a href="#qr">二维码</a></li>
             <li><a href="#table">表格</a></li>
             <li><a href="#search">搜索/状态</a></li>
@@ -82,6 +83,7 @@
             <div class="wrap" data-url="./kostand/linkage.html"></div>
             <div class="wrap" data-url="./kostand/qr.html"></div>
             <div class="wrap" data-url="./kostand/datepicker.html"></div>
+            <div class="wrap" data-url="./kostand/uploader.html"></div>
             <div class="wrap" data-url="./kostand/table.html"></div>
             <div class="wrap" data-url="./kostand/search.html"></div>
             <div class="wrap" data-url="./kostand/pagination.html"></div>
@@ -140,17 +142,5 @@
 <script src="./dist/vuec.js"></script>
 <script src="//cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
 <script src="./docs/docs.js"></script>
-<script>
-    window.uploadButton = this.uploadButton = new UploadButton({
-        el: '#uploadButton',
-        data: {
-            limit: 1,
-            replace: true,
-            images: image ? [
-                image
-            ] : []
-        }
-    })
-</script>
 </body>
 </html>

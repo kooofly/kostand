@@ -1,4 +1,3 @@
-require('vue')
-require('./assets/vue.skuEditor')
-require('./assets/vue.upload')
-require('./assets/vue.uploadButton')
+window.Vue = require('vue')
+window.SkuEditor = require('./assets/vue.skuEditor')
+window.Upload = require('./assets/vue.upload')
