@@ -24,6 +24,14 @@ require("./node_modules/jquery-validation/dist/jquery.validate.js")
 require("./assets/validate.extend.js")
 
 $.plugs = {}
+window.bootbox = require("bootbox")
+bootbox.addLocale('zh_CN', {
+    OK      : "确定",
+    CANCEL  : "取消",
+    CONFIRM : "确认"
+})
+bootbox.setDefaults('locale','zh_CN')
+
 require("./assets/modals")
 require("./assets/util")
 require("./assets/app")

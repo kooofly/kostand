@@ -37,9 +37,9 @@
 .uploadManager .title{ line-height: 30px; }
 .uploadManager .search{ float: right; width: 300px; }
 .uploadManager .wrap{padding:5px 10px;min-height: 640px;}
-.uploadManager .wrap-group{ max-width: 260px; }
+.uploadManager .wrap-group{ margin-left: -10px; }
 .uploadManager .groups{list-style: none;padding: 0;overflow-y: scroll;height: 558px;margin-bottom: 0;}
-.uploadManager .groups .item{ text-align: left; padding: 10px; }
+.uploadManager .groups .item{ text-align: left; padding: 10px; background: #f9f9f9; }
 .uploadManager .groups .all,
 .uploadManager .groups .item .name{ padding: 10px; }
 .uploadManager .groups .item .pull-right{ padding: 10px; }
@@ -50,7 +50,7 @@
 .uploadManager .groups .item .fa-times:hover{ color: #e14430; }
 .uploadManager .groups .active{ background: #ebebeb; }
 .uploadManager .groups .item .name{ cursor: default }
-.uploadManager .bar{ padding: 10px 20px; background: #f1f1f1; }
+.uploadManager .bar{ padding: 10px 20px; background: #f1f2f5; }
 .uploadManager .bar .check{ vertical-align: -2px; }
 .uploadManager .bar .handler{ cursor: pointer; }
 .uploadManager .list{border: 3px solid transparent;min-height: 387px;width: 100%;list-style: none;padding: 0;}
@@ -77,3 +77,9 @@
 .uploadM img{width: 60px;height: 60px;vertical-align: top;}
 .uploadM .control-upload-btn { width: 60px; height: 60px; border: 1px solid #ccc;  text-align: center; display: inline-block; vertical-align: top }
 .uploadM .control-upload-btn .icon{  font-size: 40px; color: #ccc; line-height: 60px; }
+
+
+
+/** WEBPACK FOOTER **
+ ** webpack:///config/config/com/uploader.scss
+ **/

@@ -15,8 +15,7 @@
             $('#modal-success').modal('hide')
         }, 1000)
     }
-
-    modals.simple = function (message) {
+    modals.alert = function (message) {
         var template = '<div id="modal-simple" class="modal fade" style="z-index: 1053" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm modal-dialog-no-title"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body message">' + message + '</div></div></div></div>'
         if (!$('#modal-simple').length) {
             $(template).appendTo('body')
@@ -54,21 +53,6 @@
             $('#modal-error .message').html(message)
         }
         $('#modal-error').modal('show')
-    }
-
-    modals.dialog = function (option) {
-        /*var defaults = {
-         id: '',
-         className: '', // modal-sm modal-lg
-         template: ''
-         }*/
-        if (!$('.modal-dialog').length) {
-            var template = '<div id="' + option.id + '" class="modal-dialog modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><div class="modal-dialog ' + option.className + '"><div class="modal-content">' + option.template + '</div></div>'
-            $(template).appendTo('body')
-        } else {
-            $('#modal-error .message').html(message)
-        }
-        $('.modal-dialog').modal('show')
     }
 
     modals.loading = function (option) {

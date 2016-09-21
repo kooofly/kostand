@@ -133,7 +133,12 @@ util.ajaxCore = function (ajaxOpt) {
 }
 util.ajax = function (option) {
     return this.ajaxCore($.extend({type: 'post', dataType: "json"}, option)).fail(function(res) {
-        $.plugs.modals.error(res.info || res.result);
+        $.plugs.modals.error(res.info);
+        return res;
+    }).then(function (res) {
+        if (res.info) {
+            $.plugs.modals.success(res.info);
+        }
         return res;
     })
 }

@@ -16,6 +16,7 @@
             var $submit = this.$element.find('[data-role=submit]')
             if ($submit.length) {
                 $submit.on(this.option.submitEvent || 'click', this, $.proxy(this, 'submit'))
+                this.$submit = $submit
             }
             if (!this.option.url) {
                 this.option.url = $submit.data('url') || this.$element.attr('action')
@@ -199,7 +200,7 @@
         },
         submit: function (option) {
             var ajaxOpt
-            var e
+            var e = {}
             var self
             if (option && option.target) {
                 e = option
@@ -210,7 +211,12 @@
                 ajaxOpt = option || {}
                 self = this
             }
-
+            $(document).off('hidden.bs.modal', '#modal-success')
+            $(document).on('hidden.bs.modal', '#modal-success', function (event) {
+                if (e.target) {
+                    $(e.target).trigger('afterSuccess')
+                }
+            })
             self.model = self.data()
             return this.valid().then(function () {
                 self.currentAjaxOpt = $.extend({}, {
@@ -218,6 +224,12 @@
                     data: self.model
                 }, ajaxOpt)
                 return util.ajax(self.currentAjaxOpt)
+            }).then(function (res) {
+                if (e.target) {
+                    $(e.target).trigger('success', res)
+                }
+
+                return res
             })
         }
     }

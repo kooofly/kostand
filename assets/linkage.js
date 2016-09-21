@@ -32,21 +32,25 @@
                 var data = res.result
                 var textKey = opt.textKey || 'text'
                 var valueKey = opt.valueKey || 'value'
+                var id
                 if (opt.default) {
                     data.forEach(function (v, i) {
                         var text = v[textKey]
                         var value = v[valueKey]
+                        id = v[opt.idKey]
                         if (value == opt.default) {
-                            html += '<option value="' + value + '" selected>' + text + '</option>'
+                            html += '<option value="' + value + '" data-id="' + (id || '') + '" selected>' + text + '</option>'
                         } else {
-                            html += '<option value="' + value + '">' + text + '</option>'
+                            html += '<option value="' + value + '" data-id="' + (id || '') + '">' + text + '</option>'
                         }
                     })
                 } else {
+
                     data.forEach(function (v, i) {
+                        id = v[opt.idKey]
                         var text = v[textKey]
                         var value = v[valueKey]
-                        html += '<option value="' + value + '">' + text + '</option>'
+                        html += '<option value="' + value + '" data-id="' + (id || '') + '">' + text + '</option>'
                     })
                 }
                 $(opt.element)
@@ -101,7 +105,8 @@
                 var p = data[k]
                 if (/\{*\}/.test(p)) {
                     id = p.replace('{', '').replace('}', '')
-                    result[k] = $('#' + id).val()
+                    var $el = $('#' + id)
+                    result[k] = $el.children("option:selected").attr('data-id') ? $el.children("option:selected").data('id') : $el.val()
                 } else {
                     result[k] = data[k]
                 }

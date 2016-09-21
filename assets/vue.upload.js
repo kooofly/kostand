@@ -1,5 +1,26 @@
+var config = {
+    // 上传控件flash路径
+    swf: '../assets/webuploader/Uploader.swf',
+    // 图片上传接口
+    upload: '../shop/savePicture.jpeg',
+    // 图片批量分组接口
+    imageBatchGrouping: '../shop/modifyPictureGroup.json',
+    // 图片批量删除接口
+    imageBatchDelete: '../deletePicture/deleteGroup.json',
+    // 编辑图片接口 图片改名
+    imageEdit: '../shop/modifyPictureName.json',
+    // 图片搜索接口
+    imageSearch: '../shop/pictureLibraryListData.json',
+    // 分组列表接口
+    groupSearch: '../shop/queryPictureGroupList.json',
+    // 分组删除接口
+    groupDelete: '../shop/deleteGroup.json',
+    // 添加修改分组接口
+    groupEdit: '../shop/saveGroup.json'
+
+}
 var UploadManager = Vue.extend({
-    template: '<div id="upload-modal" v-if="show"><div class="layer"></div><div class="uploadManager"><div class="panel"><div class="panel-heading"><span class="title">{{selected ? selected : \'所有文件\'}}</span><div class="input-group search"><input type="text" v-model="q" class="form-control">							<span class="input-group-btn">								<button class="btn" @click="searchImagesByQ()" type="button">搜索</button>							</span></div><i @click="close()" class="close icon icon-error"></i></div><div class="panel-body wrap"><div class="clearix"><ul class="groups pull-left"><li class="item all" :class="!selected && \'active\'" @click="selectGroup(\'all\')">所有</li><li @click="selectGroup($index)" class="item" :class="v.selected && \'active\'" v-for="v in group"><span class="name">{{v.filesName}}</span></li></ul><div class="pull-left main"><ul id="dz-list" class="list clearfix"><li class="item"><a class="control-add" href="javascript:;"><i class="icon icon-add"></i></a></li><li id="previewsContainer"></li><li v-for="image in model" class="item" :class="image.selected && \'selected\'"><img @click="selectedImage($index)" :src="image.compressFilePath" alt=""><span class="ratio">{{image.width}} * {{image.height}}</span><div class="name tof"><span>{{image.pictureName}}</span></div></li></ul><div id="pagination-upload" class="clearfix wrap-p"></div></div></div></div><div class="panel-footer text-center"><button @click="selectDone()" class="btn btn-primary">确定</button></div></div></div></div>',
+    template: '<div id="upload-modal" v-if="show"><div class="layer"></div><div class="uploadManager"><div class="panel"><div class="panel-heading"><span class="title">{{selected ? selected : \'所有文件\'}}</span><div class="input-group search"><input type="text" v-model="q" class="form-control">							<span class="input-group-btn">								<button class="btn" @click="searchImagesByQ()" type="button">搜索</button>							</span></div><button type="button" class="close" @click="close()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="panel-body wrap"><div class="clearix"><ul class="groups pull-left"><li class="item all" :class="!selected && \'active\'" @click="selectGroup(\'all\')">所有</li><li @click="selectGroup($index)" class="item" :class="v.selected && \'active\'" v-for="v in group"><span class="name">{{v.filesName}}</span></li></ul><div class="pull-left main"><ul id="dz-list" class="list clearfix"><li class="item"><a class="control-add" href="javascript:;"><i class="icon icon-add"></i></a></li><li id="previewsContainer"></li><li v-for="image in model" class="item" :class="image.selected && \'selected\'"><img @click="selectedImage($index)" :src="image.compressFilePath" alt=""><span class="ratio">{{image.width}} * {{image.height}}</span><div class="name tof"><span>{{image.pictureName}}</span></div></li></ul><div id="pagination-upload" class="clearfix wrap-p"></div></div></div></div><div class="panel-footer text-center"><button @click="selectDone()" class="btn btn-primary">确定</button></div></div></div></div>',
     props: {
         attrs: {
             type: Object
@@ -55,43 +76,55 @@ var UploadManager = Vue.extend({
     methods: {
         initUpload: function () {
             var self = this
-            self.dropzone = new Dropzone('#dz-list', {
-                url: '../fileUtil/saveUploadImageFile.do',
-                clickable: '.control-add',
-                previewTemplate: '<li class="item"><img class="preview" data-dz-thumbnail><div class="name tof" data-dz-name></div><div class="handler"><div class="progress"><div class="progress-bar progress-bar-success" data-dz-uploadprogress></div></div></div></li>',
-                previewsContainer: '#previewsContainer',
-                paramName: "fileData", // The name that will be used to transfer the file
-                sending: function (fie, xhr, formData) {
-                    formData.append('pictureFileId', self.searchOption.pictureFileId || '')
+            var uploader = self.uploader = WebUploader.create({
+
+                // 自动上传。
+                auto: true,
+
+                // swf文件路径
+                swf: config.swf,
+
+                // 文件接收服务端。
+                server: config.upload,
+
+                // 选择文件的按钮。可选。
+                // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+                pick: '.control-add',
+                formData: {
+                    groupId: self.searchOption.groupId || ''
                 },
-                success: function (e, res) {
-                    if (!res.success) {
-                        util.alert(res.info)
-                    } else {
-                        self.renderImages()
-                        /*var data = res.result
-                         $(e.previewElement).remove()
-                         self.model.unshift({
-                         compressFileId: data.compressFileId,
-                         compressFilePath: data.compressFilePath,
-                         height: data.height,
-                         id: data.pictureId,
-                         pictureName: data.fileName,
-                         sourceId: data.sourceId,
-                         webpFileId: data.webpFileId,
-                         sourceFilePath: data.sourceFilePath,
-                         width: data.width
-                         })
-                         if(self.model.length === self.searchOption.pageSize) {
-                         self.model.pop()
-                         }*/
-                    }
+                // 只允许选择文件，可选。
+                accept: {
+                    title: 'Images',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
                 }
-            })
+            });
+
+            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+            uploader.on( 'uploadSuccess', function( file, res ) {
+                if (!res.success) {
+                    $.plugs.modals.error(res.info)
+                } else {
+                    self.renderImages()
+                }
+            });
+            // 文件上传失败，上传出错。
+            uploader.on( 'uploadError', function( file ) {
+                var $li = $( '#'+file.id ),
+                    $error = $li.find('div.error');
+
+                // 避免重复创建
+                if ( !$error.length ) {
+                    $error = $('<div class="error"></div>').appendTo( $li );
+                }
+
+                $error.text('上传失败');
+            });
         },
         initPagination: function () {
             var self = this
-            self.pagination = new Pagination({
+            self.pagination = new $.plugs.Pagination({
                 element: '#pagination-upload'
             })
             $('#pagination-upload').on('change', function(e, i, pageSize) {
@@ -113,7 +146,7 @@ var UploadManager = Vue.extend({
                 return result
             })()
             if (!selected.length) {
-                util.alert('请选择需要修改分组的图片')
+                $.plugs.modals.alert('请选择需要修改分组的图片')
             } else  {
                 bootbox.dialog({
                     title: '选择分组',
@@ -133,10 +166,10 @@ var UploadManager = Vue.extend({
                             callback: function () {
                                 var v = $('#batchGroup').val()
                                 util.ajax({
-                                    url: '../imageDetail/batchUpdate.do',
+                                    url: config.imageBatchGrouping,
                                     data: {
-                                        pictureFileId: v,
-                                        list: JSON.stringify(selected)
+                                        groupId: v,
+                                        pictureIds: JSON.stringify(selected)
                                     }
                                 }).done(function () {
                                     self.renderImages()
@@ -166,7 +199,7 @@ var UploadManager = Vue.extend({
                     message: '确认要删除选中的图片吗？',
                     success: function () {
                         util.ajax({
-                            url: '../imageDetail/batchDelete.do',
+                            url: config.imageBatchDelete,
                             data: {
                                 list: JSON.stringify(selected)
                             }
@@ -216,7 +249,7 @@ var UploadManager = Vue.extend({
             } else {
                 if (v.pictureName) {
                     util.ajax({
-                        url: '../imageDetail/update.do',
+                        url: config.imageEdit,
                         data: {
                             id: v.id,
                             pictureName: v.pictureName
@@ -234,9 +267,9 @@ var UploadManager = Vue.extend({
         deleteImage: function (image) {
             var self = this
             util.ajax({
-                url: '../imageDetail/delete.do',
+                url: config.imageBatchDelete,
                 data: {
-                    id: image.id
+                    pictureIds: JSON.stringify([image.id])
                 }
             }).done(function (res) {
                 self.model.$remove(image)
@@ -250,7 +283,7 @@ var UploadManager = Vue.extend({
             var self = this
             self.selectedAll = false
             util.ajax({
-                url: '../imageDetail/queryList.do',
+                url: config.imageSearch,
                 data: $.extend({}, self.searchOption, o || {})
             }).done(function (res) {
                 self.model = res.list
@@ -264,9 +297,9 @@ var UploadManager = Vue.extend({
         renderGroup: function () {
             var self = this
             util.ajax({
-                url: '../imageResource/queryList.do'
+                url: config.groupSearch
             }).done(function (res) {
-                self.group = res.list
+                self.group = res.result
             })
         },
         selectGroup: function (index) {
@@ -285,7 +318,7 @@ var UploadManager = Vue.extend({
                     if (index === i) {
                         self.$set('group[' + i + '].selected', true)
                         self.$set('searchOption.pictureFileId', v.id)
-                        self.selected = v.filesName
+                        self.selected = v.groupName
                     } else {
                         self.$set('group[' + i + '].selected', false)
                     }
@@ -295,7 +328,7 @@ var UploadManager = Vue.extend({
         deleteGroup: function (o) {
             var self = this
             util.ajax({
-                url: '../imageResource/delete.do',
+                url: config.groupDelete,
                 data: {
                     id: o.id
                 }
@@ -307,16 +340,17 @@ var UploadManager = Vue.extend({
             var self = this
             bootbox.prompt({
                 title: "分组名称",
+                size: 'small',
                 callback: function(result) {
                     if (result) {
                         util.ajax({
-                            url: '../imageResource/add.do',
+                            url: config.groupEdit,
                             data: {
-                                filesName: result
+                                groupName: result
                             }
                         }).done(function (res) {
                             self.renderGroup()
-                            $.growl({ title: "添加成功", message: '' })
+                            $.plugs.modals.success(res.info)
                         })
                     } else {
                         if (result !== null) {
@@ -341,10 +375,10 @@ var UploadManager = Vue.extend({
                 callback: function(result) {
                     if (result) {
                         util.ajax({
-                            url: '../imageResource/update.do',
+                            url: config.groupEdit,
                             data: {
                                 id: o.id,
-                                filesName: result
+                                groupName: result
                             }
                         }).done(function (res) {
                             o.filesName = result
