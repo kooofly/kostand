@@ -14,6 +14,10 @@
                     var template = $(option.template).html()
                     var html = Handlebars.compile(template)(data)
                     $(option.renderTo).html(html)
+                } else if (/</.test(option.template)) {
+                    var template = option.template
+                    var html = Handlebars.compile(template)(data)
+                    $(option.renderTo).html(html)
                 } else {
                     $.ajax(option.template).done(function (template) {
                         var html = Handlebars.compile(template)(data)
@@ -38,7 +42,6 @@
                     isSearchNow: option.isSearchNow,
                     beforeSearch: option.beforeSearch
                 })
-                window.___search = self.searchEngine
                 self.searchEngine.$element.on('search', function (e, res) {
                     self.searchType = 'normal'
                     self.searchCall(res)

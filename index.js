@@ -34,6 +34,7 @@ bootbox.setDefaults('locale','zh_CN')
 
 require("./assets/modals")
 require("./assets/util")
+require("./assets/checkall")
 require("./assets/app")
 require("./assets/layout")
 
@@ -44,5 +45,7 @@ require("./assets/status")
 require("./assets/pagination")
 require("./assets/linkage")
 require("./assets/zclip")
+require("./assets/dialogselector")
+
 
 require('./config/theme.scss')

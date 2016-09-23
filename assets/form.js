@@ -4,7 +4,9 @@
         this.option = $.extend({
             url: null,
             modelKey : 'data-name',
-            validOption: {}
+            validOption: {},
+            dataSetPlug: null,
+            noValid: false // 是否验证
         }, option)
         this.$element = $(element)
         this.model = {}
@@ -39,9 +41,12 @@
 
             var def = $.Deferred();
             var $form = this.$element;
-            $form.validate(options);
-            $form.valid() ? def.resolve($form) : def.reject($form);
-
+            if ($form.length) {
+                $form.validate(options);
+                $form.valid() ? def.resolve($form) : def.reject($form);
+            } else {
+                def.resolve('no form')
+            }
             return def;
         },
         data: function (key, value) {
@@ -99,7 +104,7 @@
                         val.push($(v).val());
                     }
                 })
-                val = val.join(',')
+                // val = val.join(',')
             }
             // textarea
             if (this._getType($item) === 'textarea') {
@@ -137,7 +142,7 @@
                     $form.find('input[' + modelKey + '=' + name + ']:checked').each(function(i, v) {
                         val.push($(v).val());
                     })
-                    val = val.join(',')
+                    // val = val.join(',')
                 }
                 // 构建参数
                 if (name.match(/\./)) {
@@ -153,6 +158,7 @@
                     result[name] = val;
                 }
             })
+            self.option.dataSetPlug && self.option.dataSetPlug.call(this, result)
             return result
         },
 
@@ -218,19 +224,32 @@
                 }
             })
             self.model = self.data()
-            return this.valid().then(function () {
+            if (self.option.noValid) {
                 self.currentAjaxOpt = $.extend({}, {
                     url: self.option.url,
                     data: self.model
                 }, ajaxOpt)
-                return util.ajax(self.currentAjaxOpt)
-            }).then(function (res) {
-                if (e.target) {
-                    $(e.target).trigger('success', res)
-                }
+                return util.ajax(self.currentAjaxOpt).then(function (res) {
+                    if (e.target) {
+                        $(e.target).trigger('success', res)
+                    }
+                    return res
+                })
+            } else {
+                return this.valid().then(function () {
+                    self.currentAjaxOpt = $.extend({}, {
+                        url: self.option.url,
+                        data: self.model
+                    }, ajaxOpt)
+                    return util.ajax(self.currentAjaxOpt)
+                }).then(function (res) {
+                    if (e.target) {
+                        $(e.target).trigger('success', res)
+                    }
+                    return res
+                })
+            }
 
-                return res
-            })
         }
     }
     $.plugs.Form = Form

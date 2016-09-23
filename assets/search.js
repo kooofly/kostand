@@ -43,6 +43,8 @@
                 var data = {}
                 var $simpleInput = self.$element.find('[data-role=simple]')
                 data[$simpleInput.attr('data-name')] = $simpleInput.val()
+                // 分页参数
+                data['pageSize'] = self.$element.find('[data-name=pageSize]').val()
                 self.search({
                     data: data
                 })

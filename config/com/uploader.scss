@@ -44,10 +44,10 @@
 .uploadManager .groups .item .name{ padding: 10px; }
 .uploadManager .groups .item .pull-right{ padding: 10px; }
 .uploadManager .groups .item:hover{ background: #ebebeb; }
-.uploadManager .groups .item .fa{ cursor: pointer; font-size: 18px; vertical-align: middle; margin-left: 6px; color: #999; }
-.uploadManager .groups .item .fa-times{ vertical-align: -2px; }
-.uploadManager .groups .item .fa-edit:hover{ color: #39b3d7; }
-.uploadManager .groups .item .fa-times:hover{ color: #e14430; }
+.uploadManager .groups .item .icon{ cursor: pointer; font-size: 18px; vertical-align: middle; margin-left: 6px; color: #999; }
+
+.uploadManager .groups .item .edit:hover{ color: #39b3d7; }
+.uploadManager .groups .item .delete:hover{ color: #e14430; }
 .uploadManager .groups .active{ background: #ebebeb; }
 .uploadManager .groups .item .name{ cursor: default }
 .uploadManager .bar{ padding: 10px 20px; background: #f1f2f5; }

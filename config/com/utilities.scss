@@ -54,6 +54,7 @@ i{ font-style: normal }
 //
 // margin
 // --------------------------------------------------
+.mt0 { margin-top: 0 !important; }
 .mt4 { margin-top: 4px; }
 .mt6 { margin-top: 6px; }
 .mt7 { margin-top: 7px; }
@@ -61,6 +62,7 @@ i{ font-style: normal }
 .mt15 { margin-top: 15px; }
 .mt20 { margin-top: 20px; }
 
+.mb0{ margin-bottom: 0 !important; }
 .mb4 { margin-bottom: 4px; }
 .mb6 { margin-bottom: 6px; }
 .mb10 { margin-bottom: 10px; }
@@ -77,10 +79,12 @@ i{ font-style: normal }
 //
 // padding
 // --------------------------------------------------
+.pt0 { padding-top: 0 !important; }
 .pl10 { padding-left: 10px; }
 .pl15 { padding-left: 15px; }
 .pl20 { padding-left: 20px; }
 
+.pb0 { padding-bottom: 0!important; }
 .pr10 { padding-right: 10px; }
 .pr15 { padding-right: 15px; }
 .pr20 { padding-right: 20px; }

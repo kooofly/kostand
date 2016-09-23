@@ -33,7 +33,7 @@
         e.preventDefault()
         Plugin.call($(this), 'activate')
     }
-    // TAB DATA-API
+    // status DATA-API
     // ============
     $(document)
         .on('click.bs.status.data-api', '[data-toggle="status"]', clickHandler)

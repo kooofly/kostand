@@ -86,7 +86,6 @@ var UploadManager = Vue.extend({
 
                 // 文件接收服务端。
                 server: config.upload,
-
                 // 选择文件的按钮。可选。
                 // 内部根据当前运行是创建，可能是input元素，也可能是flash.
                 pick: '.control-add',
@@ -371,6 +370,7 @@ var UploadManager = Vue.extend({
         },
         editGroup: function (o) {
             bootbox.prompt({
+                size: 'small',
                 title: "分组名称",
                 callback: function(result) {
                     if (result) {
@@ -381,7 +381,7 @@ var UploadManager = Vue.extend({
                                 groupName: result
                             }
                         }).done(function (res) {
-                            o.filesName = result
+                            o.groupName = result
                         })
                     }
                 },
