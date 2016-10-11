@@ -42,9 +42,9 @@
                     isSearchNow: option.isSearchNow,
                     beforeSearch: option.beforeSearch
                 })
-                self.searchEngine.$element.on('search', function (e, res) {
+                self.searchEngine.$element.on('search', function (e, res, data) {
                     self.searchType = 'normal'
-                    self.searchCall(res)
+                    self.searchCall(res, data)
                 })
             }
 
@@ -66,10 +66,11 @@
 
 
         },
-        searchCall: function(res) {
+        searchCall: function(res, data) {
             this.option.callback.call(this, res)
-            if (this.searchType !== 'pagination') {
+            if (this.searchType !== 'pagination' && this.pagination) {
                 this.pagination.render({
+                    size: data.pageSize,
                     total: res.count
                 })
             }

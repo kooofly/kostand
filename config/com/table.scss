@@ -12,7 +12,9 @@
 .table .checkbox-inlnie{ line-height: 1; }
 .table label{ margin-bottom: 0; }
 .table p { margin-bottom: 4px; }
-
+.table .bottom-des { position: absolute; width: 100%; bottom: 0; background: #333; opacity: .8; color: #fff; text-align: center; padding: 2px; font-size: 12px; }
+.table-handler-wrapper{ font-size: 0; }
+.table-handler-wrapper .handler{ display: inline-block; margin: 0 5px; font-size: 14px; }
 .table-complex-wrapper .table{ margin-bottom: 0; }
 .table-complex { overflow: hidden; }
 .table-complex .table > thead > tr > th{ background: $color-active-bg; }

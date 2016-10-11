@@ -5,6 +5,7 @@
             url: null,
             modelKey : 'data-name',
             validOption: {},
+            submitButton: null,
             dataSetPlug: null,
             noValid: false // 是否验证
         }, option)
@@ -15,7 +16,7 @@
     }
     Form.prototype = {
         init: function () {
-            var $submit = this.$element.find('[data-role=submit]')
+            var $submit = this.option.submitButton ? $(this.option.submitButton) : this.$element.find('[data-role=submit]')
             if ($submit.length) {
                 $submit.on(this.option.submitEvent || 'click', this, $.proxy(this, 'submit'))
                 this.$submit = $submit
@@ -140,9 +141,13 @@
                 if (self._getType($item) === 'checkbox') {
                     val = []
                     $form.find('input[' + modelKey + '=' + name + ']:checked').each(function(i, v) {
-                        val.push($(v).val());
+                        if ($(this).data('single')) {
+                            val = $(v).val()
+                        } else {
+                            val.push($(v).val());
+                        }
                     })
-                    // val = val.join(',')
+                    // val = typeof val === 'string' ? val : JSON.stringify(val)
                 }
                 // 构建参数
                 if (name.match(/\./)) {
@@ -223,6 +228,15 @@
                     $(e.target).trigger('afterSuccess')
                 }
             })
+            var d = self.data()
+            for (var k in d) {
+                var v = d[k]
+                if (typeof v === 'object') {
+                    self.model[k] = JSON.stringify(v)
+                } else {
+                    self.model[k] = v
+                }
+            }
             self.model = self.data()
             if (self.option.noValid) {
                 self.currentAjaxOpt = $.extend({}, {

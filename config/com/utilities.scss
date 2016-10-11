@@ -94,3 +94,9 @@ i{ font-style: normal }
 // --------------------------------------------------
 .placeholder{ padding: 15px; height: 60px; background: #fcfcfc; text-align: center; color: #999; font-size: 20px; }
 .placeholder:after{ content: '开发中...' }
+
+//
+.label-self,
+.label-distribution { border-radius: 0; color: #fff; }
+.label-self { background: #e75b5b; }
+.label-distribution { background: #428cd0; }

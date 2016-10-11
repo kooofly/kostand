@@ -1,4 +1,21 @@
 (function () {
+
+    /*[
+        {
+            element: '#a',
+            url: 'xx',
+            firstOption: '',
+            textKey: 'text',
+            valueKey: 'value',
+            default: ''
+        },
+        {
+            element: '#b',
+            url: 'example.json?a={a}',
+            firstOption: '',
+            idKey: ''
+        }
+    ]*/
     function Linkage(option) {
         this.init(option)
     }
@@ -33,12 +50,13 @@
                 var textKey = opt.textKey || 'text'
                 var valueKey = opt.valueKey || 'value'
                 var id
-                if (opt.default) {
+                var defaults = opt.default || $(opt.element).data('default')
+                if (defaults) {
                     data.forEach(function (v, i) {
                         var text = v[textKey]
                         var value = v[valueKey]
                         id = v[opt.idKey]
-                        if (value == opt.default) {
+                        if (value == defaults) {
                             html += '<option value="' + value + '" data-id="' + (id || '') + '" selected>' + text + '</option>'
                         } else {
                             html += '<option value="' + value + '" data-id="' + (id || '') + '">' + text + '</option>'
@@ -62,7 +80,8 @@
         ready: function (opt) {
             var self = this
             $(opt.element).on('ready', function (e, currentOpt, index) {
-                if (currentOpt.default) {
+                var defaults = currentOpt.default || $(currentOpt.element).data('default')
+                if (defaults) {
                     self.renderAjaxData(self.option[index + 1], index + 1)
                 }
             })

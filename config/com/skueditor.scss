@@ -1,0 +1,30 @@
+#skuEditor{ }
+#skuEditor .vol{ padding: 10px 0; background: #f9f9f9;}
+#skuEditor .vol .control-label{ width: 120px; }
+#skuEditor .vol .pull-right{ margin-left: 0;  }
+#skuEditor .vol .form-control{ border-top-right-radius: 0; border-bottom-right-radius: 0; border-color: #ddd; height: 31px; border-right: 0; }
+#skuEditor .vol .btn{ border-top-left-radius: 0; border-bottom-left-radius: 0; }
+#skuEditor .table{ margin-bottom: 0; }
+#skuEditor th{ border-width: 1px; text-align: center; }
+#skuEditor td{ text-align: center; }
+#skuEditor .form-control{ padding: 6px; display: inline-block; }
+#skuEditor .attrs{ background: #f9f9f9; margin: 10px 0;}
+#skuEditor .attr { padding: 10px 0; margin: 0; }
+#skuEditor .attr .pull-left{  border-right:1px solid #d6d6d6; margin-right: 10px; }
+#skuEditor .attr .control-label {
+  float: left; width: 80px; padding-right: 10px; padding-top: 0; line-height: 22px; }
+#skuEditor .attr .check-group{  line-height: 22px; }
+#skuEditor .attr .check-group a{ margin-left: 10px; }
+#skuEditor .attr .check-group label{ padding-top: 0; vertical-align: top; }
+
+#skuEditor .routing{ width: 240px; margin: 0; }
+#skuEditor .routing .lbl{ text-align: left; }
+
+#skuEditor .text { width: 80px; }
+#skuEditor .source .media{ background: #fff7f1; padding: 4px; margin: 4px 0; }
+#skuEditor .source .media-body{ text-align: left; }
+#skuEditor .source .add{ display: inline-block; margin-top: 4px;}
+#skuEditor .source .stock-input{ width: 40px; margin-right: 10px; }
+#skuEditor .source .delete{ line-height:28px; padding-right: 10px; }
+#skuEditor .source .name{ line-height:28px; padding-left: 10px; }
+#skuEditor .source .proName{ line-height:28px; }

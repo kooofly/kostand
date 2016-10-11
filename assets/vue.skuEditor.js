@@ -1,3 +1,4 @@
+Vue.config.debug = false
 Vue.component('V_source', {
     template: '<div class="source"><div class="media" v-for="v in value"><div class="pull-right"><a class="delete" @click="delete(v)" href="javascript:;">删除</a></div><div class="pull-left"><span class="name">{{v.farmerName}}</span></div><div class="media-body"><span class="proName">{{v.proName}}</span><div>库存：<input type="text" digits="true" mi="true" required :name=\'"stock" + index + $index\' class="stock-input" v-model="v.stock" /></div></div></div><a class="add" @click="addSource()" href="javascript:;">设置商品来源</a></div>',
     props: {
@@ -37,7 +38,7 @@ Vue.component('V_source', {
                     return result
                 })()
                 if (isExist){
-                    util.alert('此来源已存在，请不要重复添加哦')
+                    $.plugs.modals.error('此来源已存在，请不要重复添加哦')
                 }
             })
         }
@@ -325,9 +326,9 @@ var model = [
         traceList: []
     }
 ]*/
-window.SkuEditor = Vue.extend({
-    template: '<div><a @click="addSkuAttr()" class="control-desc" href="javascript:;"><i class=" fa fa-plus"></i> 新增规格</a><div class="attrs"><div class="media attr" v-for="item in sku"><div class="pull-left"><span class="control-label">{{item.text}}</span></div><div class="media-body"><div class="check-group"><label class="checkbox-inline" v-for="k in item.data"><input value="k.value" type="checkbox" v-model.sync="k.checked" name="item.key" @change="changeModel(k, item)"><span>{{k.value}}</span></label><a @click="addSku(item.data, item)" href="javascript:;">添加{{item.text}}</a></div></div></div></div><table class="table table-bordered table-hover"><thead><tr><th v-for="key in columns" class="{{key.className}}" :class="{active: sortKey == key.field}" >{{key.name}}</th></tr></thead><tbody><tr v-for="(index, entry) in model" v-if="!entry.checked"><td v-for="key in columns" :class="key.className"><v-render :value.sync="entry[key.field]" :field="key.field" :index="index" :row-data.sync="entry" :render="key.render"></v-render></td></tr></tbody></table></div>',
-    props: ['model', 'columns', 'map', 'sku', 'limit'],
+var SkuEditor = Vue.extend({
+    template: '<div><a @click="addSkuAttr()" class="control-desc btn btn-link" href="javascript:;"><i class=" icon icon-add"></i> 新增规格</a><div class="attrs"><div class="media attr" v-for="item in sku"><div class="pull-left"><span class="control-label">{{item.text}}</span></div><div class="media-body"><div class="check-group"><label class="checkbox-inline" v-for="k in item.data"><input value="k.value" type="checkbox" v-model.sync="k.checked" name="item.key" @change="changeModel(k, item)"><span>{{k.value}}</span></label><a @click="addSku(item.data, item)" href="javascript:;">添加{{item.text}}</a></div></div></div></div><table class="table table-bordered table-hover"><thead><tr><th v-for="key in columns" :class="[sortKey == key.field ? \'active\' : \'\', key.className]" >{{key.name}}</th></tr></thead><tbody><tr v-for="(index, entry) in model" v-if="!entry.checked"><td v-for="key in columns" :class="key.className"><v-render :value.sync="entry[key.field]" :field="key.field" :index="index" :row-data.sync="entry" :render="key.render"></v-render></td></tr></tbody></table></div>',
+    //props: ['model', 'columns', 'map', 'sku', 'limit'],
     data: function () {
         return {
             map: {},
@@ -364,45 +365,51 @@ window.SkuEditor = Vue.extend({
         addSkuAttr: function () {
             var self = this
             if (self.sku.length >= self.limit) {
-                util.alert('最多添加' + self.limit + '个规格哦')
+                $.plugs.modals.error('最多添加' + self.limit + '个规格哦')
                 return
             }
-            util.prompt({
-                title: "规格名称",
-                success: function(result) {
-                    var isRepeat = false
-                    self.sku.forEach(function (v) {
-                        if (v.text === result) {
-                            isRepeat = true
-                            return
-                        }
-                    })
-                    if (!isRepeat) {
 
-                        var index = self.sku.length
-                        self.sku.push({
-                            text: result,
-                            key: self.key(index),
-                            data: []
+            bootbox.prompt({
+                title: "规格名称",
+                size: 'small',
+                callback: function(result) {
+                    if (result) {
+                        var isRepeat = false
+                        self.sku.forEach(function (v) {
+                            if (v.text === result) {
+                                isRepeat = true
+                                return
+                            }
                         })
-                        self.columns.unshift({
-                            name: result,
-                            field: self.key(index)
-                        })
-                    } else {
-                        util.alert('相同的规格已添加，请勿重复添加')
+                        if (!isRepeat) {
+
+                            var index = self.sku.length
+                            self.sku.push({
+                                text: result,
+                                key: self.key(index),
+                                data: []
+                            })
+                            self.columns.unshift({
+                                name: result,
+                                field: self.key(index)
+                            })
+                        } else {
+                            $.plugs.modals.error('相同的规格已添加，请勿重复添加')
+                        }
                     }
+
                 }
             })
         },
         // 添加SKU值
         addSku: function (v, item) {
             var self = this
-            util.prompt({
+            bootbox.prompt({
+                size: 'small',
                 title: "规格值",
-                success: function(result) {
+                callback: function(result) {
                     if(result.length > 10) {
-                        util.alert('规格名称过长')
+                        $.plugs.modals.error('规格名称过长')
                         return
                     }
                     var isExist = false
@@ -418,7 +425,7 @@ window.SkuEditor = Vue.extend({
                         v.push(o)
                         self.changeModel(o, item)
                     } else {
-                        util.alert('您设置的值已存在，请勿重复添加');
+                        $.plugs.modals.error('您设置的值已存在，请勿重复添加');
                     }
 
                 },
@@ -825,4 +832,5 @@ window.SkuEditor = Vue.extend({
         VBatch: VBatch
     }
 })
+module.exports = SkuEditor
 // delSkuTraceIdList

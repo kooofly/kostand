@@ -12,10 +12,10 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">图片上传：</label>
                         <div class="col-sm-10">
-                            <div class="uplaoder clearfix" style="border: 1px solid #ccc; padding: 20px 10px;">
+                            <div class="upload-wrapper">
                                 <div class="clearfix com">
                                     <div class="col-sm-2 text-right ">
-                                        <div style="margin-top: 30px">
+                                        <div class="upload-label">
                                             <p>商品详情图</p>
                                             <div class="text-danger">
                                                 400 * 400px
@@ -23,9 +23,21 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="placeholder" style="width: 110px; height: 110px; margin-bottom: 10px;"></div>
-                                        <div class="placeholder" style="width: 110px; height: 110px; margin-bottom: 10px;"></div>
-                                        <div class="placeholder" style="width: 110px; height: 110px;"></div>
+
+                                        <span class="btn-add icon icon-add"></span>
+                                        <ul class="list nav nav-pills nav-stacked">
+                                            <li>
+                                                <div class="bar">
+                                                    <i class="icon icon-delete"></i>
+                                                    <i class="icon icon-aup"></i>
+                                                    <i class="icon icon-adown"></i>
+                                                </div>
+                                                <img class="image" src="" alt="">
+                                            </li>
+                                            <li>
+                                                <img class="image" src="" alt="">
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="placeholder" style="height: 110px;"></div>
@@ -57,7 +69,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">图片上传：</label>
                         <div class="col-sm-7">
-                            <div class="uplaoder" style="border: 1px solid #ccc; padding: 20px 10px;">
+                            <div class="upload-wrapper">
                                 <div class="clearfix com">
                                     <div class="col-sm-4">
                                         <div class="placeholder" style="width: 110px; height: 110px; margin-bottom: 10px;"></div>
@@ -95,6 +107,106 @@
     </div>
 
 </section>
+
+<script type="text/x-handlebars-template">
+    <div id="upload-modal" v-if="show">
+        <div class="layer">
+        </div>
+        <div class="uploadManager">
+            <div class="panel">
+                <div class="panel-heading">
+                <span class="title">
+                    {{selected ? selected : \'所有文件\'}}
+                </span>
+                    <div class="input-group search">
+                        <input type="text" v-model="q" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn" @click="searchImagesByQ()" type="button">
+                            搜索
+                        </button>
+                    </span>
+                    </div>
+                    <button type="button" class="close" @click="close()" data-dismiss="modal"
+                            aria-label="Close">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                    </button>
+                </div>
+                <div class="panel-body wrap">
+                    <div class="clearix">
+                        <ul class="groups pull-left">
+                            <li class="item all" :class="!selected && \'active\'" @click="selectGroup(\'all\')">
+                                所有
+                            </li>
+                            <li @click="selectGroup($index)" class="item" :class="v.selected && \'active\'"
+                                v-for="v in group">
+                            <span class="name">
+                                {{v.groupName}}
+                            </span>
+                            </li>
+                        </ul>
+                        <div class="pull-left main">
+                            <ul id="dz-list" class="list clearfix">
+                                <li class="item">
+                                    <a class="control-add" href="javascript:;">
+                                        <i class="icon icon-add">
+                                        </i>
+                                    </a>
+                                </li>
+                                <li id="previewsContainer">
+                                </li>
+                                <li v-for="image in model" class="item" :class="image.selected && \'selected\'">
+                                    <img @click="selectedImage($index)" :src="image.thumbnailUrl" alt="">
+                                <span class="ratio">
+                                    {{image.width}} * {{image.height}}
+                                </span>
+                                    <div class="name tof">
+                                    <span>
+                                        {{image.pictureName}}
+                                    </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div v-el:pagination class="clearfix wrap-p">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <button @click="selectDone()" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-handlebars-template">
+    <div>
+        <span class="btn-add icon icon-add" @click="upManager()"></span>
+        <ul class="list nav nav-pills nav-stacked">
+            <li v-for="image in images">
+                <div class="bar">
+                    <i class="icon icon-delete" @click="deleteImage(image)"></i>
+                    <i class="icon icon-aup" @click="sortImage($index - 1)"></i>
+                    <i class="icon icon-adown" @click="sortImage($index + 1)"></i>
+                </div>
+                <img class="image" src="image.compressFilePath" alt="">
+            </li>
+        </ul>
+        <upload-manager></upload-manager>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template">
+    <div class="uploadM">
+        <div class="model">
+            <span v-for="image in images" class="pull-left item"><img :src="image.compressFilePath" alt=""><i @click="deleteImage(image)" class="fa fa-times-circle text-danger"></i></span>
+        </div>
+        <a class="control-upload-btn" @click="upManager()" href="javascript:;"><i class="icon icon-add"></i></a><upload-manager></upload-manager>
+    </div>
+</script>
 <!--<script src="./assets/webuploader/webuploader.min.js"></script>-->
 <script src="./assets/webuploader/webuploader.flashonly.min.js"></script>
 <script>

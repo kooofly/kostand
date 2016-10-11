@@ -1,0 +1,20 @@
+.login .top { height: 110px; background: #eaeaea; }
+.login .container{ background: transparent; padding-top: 150px; }
+.login .container .footer{ margin-top: 120px; margin-bottom: 20px; }
+.login .left { margin-top: 30px; }
+.login .login-wrapper{ margin-right: 30px; width: 440px; }
+.login .login-wrapper form{ width: 440px;
+  box-shadow: 0 0 8px 0px #ccc;
+  background: #fbfbfb;
+  padding: 40px;
+  margin-top: 30px; }
+.login .login-wrapper .form-group{ margin-bottom: 20px; }
+.login .login-wrapper a{ color: #333; }
+.login .login-wrapper .codeImg{ cursor: pointer; }
+.login .login-wrapper .help-block{ text-align: left; }
+.login .login-wrapper .btn{ height: 45px; border-radius: 0; font-size: 16px; }
+.login .login-wrapper .input-group-btn{ vertical-align: top; }
+.login .login-wrapper #btn-code{  margin-left: 10px;  }
+.login .input-group-addon{ background: none; border: 0; padding: 0; vertical-align: top; }
+.login .form-control{ height: 45px; background: #eeeef0; border: 0;  }
+.login .has-error .input-group-addon{ background: transparent; border: 0; }

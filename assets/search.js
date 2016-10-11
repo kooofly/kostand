@@ -68,8 +68,9 @@
             } else {
                 opt = option ? option : null
             }
+            self.model = self.form.model
             this.form.submit(opt).done(function (res) {
-                self.$element.trigger('search', res, self)
+                self.$element.trigger('search', [res, self.form.model, self])
             })
         }
     }

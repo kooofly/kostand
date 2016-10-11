@@ -17,9 +17,13 @@
         this.val(element, container)
     }
     Status.prototype.val = function (element, container) {
-        container
-            .data('value', element.data('value'))
-            .trigger('change', element.data('value'))
+
+        if (container.data('value') !== element.data('value')) {
+            container.data('value', element.data('value'))
+            container.trigger('change', element.data('value'))
+        } else {
+            container.data('value', element.data('value'))
+        }
     }
 
     function Plugin(option) {

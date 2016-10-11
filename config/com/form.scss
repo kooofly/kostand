@@ -3,12 +3,16 @@
   .control-label{ width: 120px; font-weight: 400; padding-left: 0; padding-right: 0; }
   .offset{ margin-left: 120px; }
   .has-feedback .input-group .form-control-feedback{ right: 0; }
+  .form-group {
+    min-height: 32px;
+  }
 }
 .form .control-label,
 .form-horizontal .control-label{ width: 120px; font-weight: 400; padding-left: 0; padding-right: 0; }
 .form {
   .form-group {
     @include make-row;
+    min-height: 32px;
   }
   .control-label{
     text-align: right;
@@ -51,3 +55,5 @@
 .caret-up { border-bottom: 4px dashed; border-top: 0; }
 
 .btn-group .btn{ line-height: 1.2; }
+
+.has-error .input-group-addon{ border: 0; background: none; vertical-align: top; }
