@@ -17,7 +17,7 @@
             var self = this
             Handlebars.registerPartial(option.registerPartial, option.template);
             $(option.target).on('click', function () {
-                bootbox.dialog({
+                self.dialog = bootbox.dialog({
                     size: 'large',
                     message: Handlebars.compile(option.tempLayout)([]),
                     buttons: {

@@ -52,7 +52,15 @@
         },
         data: function (key, value) {
             if (key && typeof value === 'undefined') {
-                return this.getData(key)
+                if (typeof key === 'object') {
+                    var o = key
+                    for (var k in o) {
+                        this.setData(k, o[k])
+                    }
+                } else {
+                    return this.getData(key)
+                }
+
             } else if (key && value) {
                 this.setData(key, value)
                 return this

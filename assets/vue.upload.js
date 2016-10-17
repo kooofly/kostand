@@ -444,7 +444,13 @@ var UploadButton = Vue.extend({
             images: [], // 选中的图片
             onSelect: null,
             size: null,
-            isDirectUpload: false
+            isDirectUpload: false,
+            server: null,
+            accept: {
+                title: 'Images',
+                extensions: 'jpg,jpeg,png',
+                mimeTypes: 'image/*'
+            }
         }
     },
     watch: {
@@ -477,16 +483,12 @@ var UploadButton = Vue.extend({
                 swf: config.swf,
 
                 // 文件接收服务端。
-                server: config.directUpload,
+                server: self.server || config.directUpload,
                 // 选择文件的按钮。可选。
                 // 内部根据当前运行是创建，可能是input元素，也可能是flash.
                 pick: $(self.$el).find('.btn-add'),
                 // 只允许选择文件，可选。
-                accept: {
-                    title: 'Images',
-                    extensions: 'gif,jpg,jpeg,bmp,png',
-                    mimeTypes: 'image/*'
-                }
+                accept: self.accept
             });
 
             uploader.on('uploadBeforeSend', function (o, data, headers) {
@@ -552,7 +554,11 @@ var UploadButton = Vue.extend({
             }
         },
         deleteImage: function (image) {
-            this.images.$remove(image)
+            if (image.id) {
+                image.isDelete = 'y'
+            } else {
+                this.images.$remove(image)
+            }
             typeof this.onRemove === 'function' && this.onRemove(image)
         }
     },

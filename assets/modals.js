@@ -43,6 +43,7 @@
             $('#modal-confirm .message').html(option.message)
         }
         $('#modal-confirm').modal('show')
+        return $('#modal-confirm')
     }
 
     modals.error = function (message) {

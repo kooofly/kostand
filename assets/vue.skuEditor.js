@@ -1,6 +1,6 @@
 Vue.config.debug = false
 Vue.component('V_source', {
-    template: '<div class="source"><div class="media" v-for="v in value"><div class="pull-right"><a class="delete" @click="delete(v)" href="javascript:;">删除</a></div><div class="pull-left"><span class="name">{{v.farmerName}}</span></div><div class="media-body"><span class="proName">{{v.proName}}</span><div>库存：<input type="text" digits="true" mi="true" required :name=\'"stock" + index + $index\' class="stock-input" v-model="v.stock" /></div></div></div><a class="add" @click="addSource()" href="javascript:;">设置商品来源</a></div>',
+    template: '<div class="source"><div class="media" v-for="v in value"><div class="pull-right"><a class="delete" @click="deleteSource(v)" href="javascript:;">删除</a></div><div class="pull-left"><span class="name">{{v.farmerName}}</span></div><div class="media-body"><span class="proName">{{v.proName}}</span><div>库存：<input type="text" digits="true" mi="true" required :name=\'"stock" + index + $index\' class="stock-input" v-model="v.stock" /></div></div></div><a class="add" @click="addSource()" href="javascript:;">设置商品来源</a></div>',
     props: {
         value: {},
         index: {},
@@ -44,7 +44,7 @@ Vue.component('V_source', {
         }
     },
     methods: {
-        delete: function (v) {
+        deleteSource: function (v) {
             var self = this
             if (v.id) {
                 if (!this.$root.$get('delSkuTraceIdList')) {
@@ -104,15 +104,16 @@ Vue.component('V_source', {
                         }
                     }
                 })
-                new Pagination({
+                var pagination = new $.plugs.Pagination({
                     element: '#pagination-source',
                     maxPagerCount: 7,
-                }).render({
+                })
+                pagination.render({
                     total: res.count,
                     size: 5,
                     current: 1
                 })
-                $('#pagination-source').on('change', function(e, current, size) {
+                pagination.$element.on('change', function(e, current, size) {
                     window.currentSource.search(current, strTable);
                 })
             })
@@ -151,7 +152,7 @@ Vue.component('V_source', {
     }
 })
 Vue.component('V_routing', {
-    template: $('#template_routing').length ?  $('#template_routing')[0].innerHTML : '<div class="routing"><div class="row "><div class="col-md-4"><div class="lbl">农户</div><input class="form-control" decimal="true" required :name="\'farmerSplitFee\' + index" placeholder="农户" v-model="value.farmerSplitFee" type="text"/></div><div class="col-md-4"><div class="lbl">邮政</div><input class="form-control" decimal="true" required :name="\'postSplitFee\' + index" placeholder="邮政" v-model="value.postSplitFee" type="text"/></div><div class="col-md-4"><div class="lbl">村站</div><input class="form-control" decimal="true" required :name="\'villageSplitFee\' + index" placeholder="村站" v-model="value.villageSplitFee" type="text"/></div></div></div>',
+    template: $('#template_routing').length ?  $('#template_routing')[0].innerHTML : '<div class="routing"><div class="media"><div class="media-left"><label class="lbl">农户</label></div><div class="media-body"><input class="form-control" decimal="true" required :name="\'farmerSplitFee\' + index" placeholder="农户" v-model="value.farmerSplitFee" type="text"></div></div><div class="media"><div class="media-left"><label class="lbl">邮政</label></div><div class="media-body"><input class="form-control" decimal="true" required :name="\'postSplitFee\' + index" placeholder="邮政" v-model="value.postSplitFee" type="text"></div></div><div class="media"><div class="media-left"><label class="lbl">村站</label></div><div class="media-body"><input class="form-control" decimal="true" required :name="\'villageSplitFee\' + index" placeholder="村站" v-model="value.villageSplitFee" type="text"></div></div></div>',
     props: {
         value: {
             twoWay: true,
